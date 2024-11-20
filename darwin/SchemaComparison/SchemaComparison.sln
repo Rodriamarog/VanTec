@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaComparison.Core", "SchemaComparison.Core\SchemaComparison.Core.csproj", "{F9080DB7-5684-4584-8DC7-419899F48D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaComparison.Console", "SchemaComparison.Console\SchemaComparison.Console.csproj", "{B675C0ED-9BA8-4FF4-AE0C-39B938F5468A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9080DB7-5684-4584-8DC7-419899F48D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9080DB7-5684-4584-8DC7-419899F48D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9080DB7-5684-4584-8DC7-419899F48D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9080DB7-5684-4584-8DC7-419899F48D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B675C0ED-9BA8-4FF4-AE0C-39B938F5468A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B675C0ED-9BA8-4FF4-AE0C-39B938F5468A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B675C0ED-9BA8-4FF4-AE0C-39B938F5468A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B675C0ED-9BA8-4FF4-AE0C-39B938F5468A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
