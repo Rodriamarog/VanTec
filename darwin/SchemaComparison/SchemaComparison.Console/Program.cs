@@ -10,8 +10,7 @@ class Program
     {
         try
         {
-            string connectionString = "Server=DESKTOP-AUSLRP2;Database=Darwin;Trusted_Connection=True;";
-            string entityFilesPath = @"C:\netC#\apps\Datos_SQLServer\Datos_SQLServer\Datos\Diccionario";
+            string connectionString = "Server=DESKTOP-AUSLRP2;Database=Darwin;Trusted_Connection=True;TrustServerCertificate=True;";            string entityFilesPath = @"C:\netC#\apps\Datos_SQLServer\Datos_SQLServer\Datos\Diccionario";
             string contextFilePath = @"C:\netC#\apps\Datos_SQLServer\Datos_SQLServer\Datos\Diccionario\DarwinContext.cs";
             
             // Obtener la ruta específica del proyecto Console
@@ -51,8 +50,8 @@ class Program
             Console.WriteLine($"Reporte guardado en la carpeta del proyecto: {relativePath}");
 
             // Run DarwinContextAnalyzer
-            var analyzer = new DarwinContextAnalyzer(contextFilePath, connectionString);
-            string analyzerReport = await analyzer.GenerateReportAsync();
+            var analyzer = new DetailedSchemaAnalyzer(entityFilesPath, connectionString);
+            string analyzerReport = await analyzer.GenerateDetailedReportAsync();
             Console.WriteLine(analyzerReport);
 
             // Guardar reporte en la carpeta Reportes

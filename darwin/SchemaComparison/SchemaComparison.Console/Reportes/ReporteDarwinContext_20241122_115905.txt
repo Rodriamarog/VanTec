@@ -1,0 +1,263 @@
+=== REPORTE DETALLADO DE DIFERENCIAS ===
+
+1. TABLAS QUE EXISTEN EN BD PERO NO EN ARCHIVOS:
+
+Tabla: VT_AvisoRCartaPorte
+Estructura:
+  - AvisoRemesa (int(4), NOT NULL)
+  - CartaPorte (varchar(36), NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_BTCartaPorte
+Estructura:
+  - CartaPorte (varchar(36), NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Trafico (int(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_ConfProveXEmpresa
+Estructura:
+  - AutoriPagoFacturaCXP (smallint(2), NOT NULL)
+  - CtaContRetencionAcre (varchar(30), NULL)
+  - CtaContRetencionProv (varchar(30), NULL)
+  - CuentaComplementaria (varchar(30), NULL)
+  - CuentaContable (varchar(30), NULL)
+  - CuentaContableDlls (varchar(30), NULL)
+  - DiasDeCredito (smallint(2), NOT NULL)
+  - Empresa (int(4), NOT NULL)
+  - FormaDePago (varchar(3), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - PD (smallint(2), NOT NULL)
+  - ProductoGeneral (int(4), NOT NULL)
+  - Proveedor (int(4), NOT NULL)
+  - Provisionar (smallint(2), NOT NULL)
+  - SerieSucursal (varchar(5), NULL)
+
+Tabla: VT_CuentasBancoProve
+Estructura:
+  - Banco (int(4), NOT NULL)
+  - Beneficiario (varchar(55), NULL)
+  - ClaveTransferencia (varchar(5), NULL)
+  - Cuenta (varchar(20), NULL)
+  - Desactivada (smallint(2), NOT NULL)
+  - FormaDeAplicacion (smallint(2), NOT NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Proveedor (int(4), NOT NULL)
+  - Sucursal (varchar(4), NULL)
+  - TipoCuenta (varchar(2), NULL)
+  - TipoTransferencia (smallint(2), NOT NULL)
+
+Tabla: VT_DTA
+Estructura:
+  - Fecha (datetime(8), NULL)
+  - Tipo (smallint(2), NOT NULL)
+  - Valor (decimal(5), NULL)
+
+Tabla: VT_EmbaCartaPorte
+Estructura:
+  - CartaPorte (varchar(36), NULL)
+  - Embarque (int(4), NOT NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_INPC
+Estructura:
+  - Fecha (datetime(8), NULL)
+  - Valor (decimal(9), NULL)
+
+Tabla: VT_Multas
+Estructura:
+  - Fecha (datetime(8), NULL)
+  - Tipo (smallint(2), NOT NULL)
+  - Valor (decimal(9), NULL)
+
+Tabla: VT_PedCartaPorte
+Estructura:
+  - CartaPorte (varchar(36), NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Pedimento (int(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_PedimentoConfig
+Estructura:
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Pedimento (int(4), NOT NULL)
+  - PUTotalPartidasEB (smallint(2), NOT NULL)
+  - VC0PartidasEB (smallint(2), NOT NULL)
+  - VC1PartidasEB (smallint(2), NOT NULL)
+  - VCTotalPartidasEB (smallint(2), NOT NULL)
+
+Tabla: VT_Prevalid
+Estructura:
+  - Contraprestacion (decimal(5), NULL)
+  - Fecha (datetime(8), NULL)
+  - Tipo (smallint(2), NOT NULL)
+  - Valor (decimal(5), NULL)
+
+Tabla: VT_RAereaCartaPorte
+Estructura:
+  - CartaPorte (varchar(36), NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - RemAerea (int(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_RemesaCartaPorte
+Estructura:
+  - CartaPorte (varchar(36), NULL)
+  - FechaRegistro (datetime(8), NULL)
+  - HoraRegistro (datetime(8), NULL)
+  - ID (int(4), NOT NULL)
+  - Oficina (char(4), NOT NULL)
+  - Remesa (int(4), NOT NULL)
+  - Usuario (varchar(12), NULL)
+
+Tabla: VT_Tasa
+Estructura:
+  - Fecha (datetime(8), NULL)
+  - Tasa (decimal(5), NULL)
+
+Tabla: VT_TipoDeCambio
+Estructura:
+  - Cambio (decimal(5), NULL)
+  - Fecha (datetime(8), NULL)
+
+Tabla: VT_XMLRelaCove
+Estructura:
+  - Documento (int(4), NOT NULL)
+  - eDocument (varchar(30), NULL)
+  - ID (int(4), NOT NULL)
+  - NombreArchivo (varchar(18), NULL)
+  - Oficina (char(4), NOT NULL)
+  - Tipo (varchar(2), NULL)
+
+2. TABLAS QUE EXISTEN EN ARCHIVOS PERO NO EN BD:
+
+Tabla: VT_PtyFactElect
+Estructura:
+  - Cliente (int, NOT NULL)
+  - Estatus (smallint, NOT NULL)
+  - Factura (nvarchar, NULL)
+  - Fecha (DateTime?, NULL)
+  - Hora (DateTime?, NULL)
+  - ID (int, NOT NULL)
+  - NombreArchivo (nvarchar, NULL)
+  - Oficina (nvarchar, NULL)
+  - Tipo (smallint, NOT NULL)
+  - Usuario (nvarchar, NULL)
+
+3. COLUMNAS QUE EXISTEN EN BD PERO NO EN ARCHIVOS:
+
+Tabla: VT_AvisoRemesas
+  - ArchivoDigital (varchar(254), NULL)
+
+Tabla: VT_AvisosTraslado
+  - AnioAT (smallint(2), NOT NULL)
+
+Tabla: VT_Bancos
+  - ClaveTransferencia (varchar(5), NULL)
+  - habilitarBanEnModulo (smallint(2), NOT NULL)
+
+Tabla: VT_BEntrada
+  - Bloqueado (smallint(2), NOT NULL)
+
+Tabla: VT_BFacturas
+  - subdividirPorValor (smallint(2), NOT NULL)
+
+Tabla: VT_Clientes
+  - DefaultKeyCer (smallint(2), NOT NULL)
+  - ObservacionesExp (text(16), NULL)
+  - ReferenciaPedimento (varchar(20), NULL)
+
+Tabla: VT_Concepto
+  - HeredarCobroCptoPed (smallint(2), NOT NULL)
+
+Tabla: VT_ConfiguracionGral
+  - AfecSaldoPagarFacCXP (smallint(2), NOT NULL)
+  - AutoriPagoFacturaCXP (smallint(2), NOT NULL)
+  - ProductoGeneral (int(4), NOT NULL)
+
+Tabla: VT_CtaContables
+  - AfecSaldoPagarFacCXP (smallint(2), NOT NULL)
+  - FechaSaldoInicial (datetime(8), NULL)
+  - HeredarInfoProforma (smallint(2), NOT NULL)
+  - SaldoInicial (decimal(17), NOT NULL)
+  - SaldoInicialFondo (decimal(17), NOT NULL)
+  - Serie (varchar(5), NULL)
+
+Tabla: VT_CteDefaultCons
+  - TransporteArriboGen (smallint(2), NOT NULL)
+  - TransporteSalidaGen (smallint(2), NOT NULL)
+  - TransporteTerritGen (smallint(2), NOT NULL)
+
+Tabla: VT_CXPDoctotal
+  - AutorizaPago (smallint(2), NOT NULL)
+  - CuentasBancoProve (int(4), NOT NULL)
+  - FechaAutorizaPago (datetime(8), NULL)
+  - HoraAutorizaPago (datetime(8), NULL)
+  - UsuarioAutorizaPago (varchar(12), NULL)
+
+Tabla: VT_CXPTipoDocumento
+  - Fondo (smallint(2), NOT NULL)
+  - Sucursal (varchar(4), NULL)
+  - TipoCuenta (varchar(2), NULL)
+
+Tabla: VT_DirecCorreInterno
+  - EnviarInfoPago (smallint(2), NOT NULL)
+
+Tabla: VT_General
+  - ArchDigitalFacEnAuto (smallint(2), NOT NULL)
+
+Tabla: VT_Modulos
+  - CartaProtestaAlADP (smallint(2), NOT NULL)
+  - QRAutorizarPaValidar (smallint(2), NOT NULL)
+  - RestringirRemSemDif (smallint(2), NOT NULL)
+
+Tabla: VT_PartidaDatosExtra
+  - NumeroDeRollo (varchar(20), NULL)
+  - TipoEmisorCO (smallint(2), NOT NULL)
+
+Tabla: VT_PedimentoDatExtra
+  - EmpresaLucyPE (int(4), NOT NULL)
+
+Tabla: VT_PedimentoFacturas
+  - TipoEmisorCO (smallint(2), NOT NULL)
+
+Tabla: VT_RemAerea
+  - ArchivoDigital (varchar(254), NULL)
+
+Tabla: VT_Represen
+  - Mancomunado (smallint(2), NOT NULL)
+
+Tabla: VT_TipoDeDocumento
+  - Fondo (smallint(2), NOT NULL)
+
+Tabla: VT_TransporTransitos
+  - EsExtranjero (smallint(2), NOT NULL)
+
+4. COLUMNAS QUE EXISTEN EN ARCHIVOS PERO NO EN BD:
+
+Tabla: VT_DocumentosWServer
+  - BNotasDetPedimentID (int, NOT NULL)
+  - Estatus (smallint, NOT NULL)
+
+Tabla: VT_PFormatosDeta
+  - CampoEnLaTabla (nvarchar, NULL)
