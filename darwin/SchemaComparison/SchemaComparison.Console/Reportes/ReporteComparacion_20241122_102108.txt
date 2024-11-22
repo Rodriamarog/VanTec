@@ -1,0 +1,1379 @@
+Reporte de Comparación entre Base de Datos y Archivos Entity Framework
+=============================================================
+
+Diagnóstico:
+• Total de tablas VT_ en la base de datos: 648
+• Tablas VT_ procesadas: 648
+• Archivos VT_*.cs encontrados: 633
+
+✅ VT_ACuentaTerceros - Tabla congruente
+
+✅ VT_AcumulaConcepto - Tabla congruente
+
+✅ VT_Adendas - Tabla congruente
+
+✅ VT_AduanaDireccion - Tabla congruente
+
+✅ VT_AgrupaPartidas - Tabla congruente
+
+✅ VT_AnexMani - Tabla congruente
+
+✅ VT_Anticipo - Tabla congruente
+
+✅ VT_Archivos - Tabla congruente
+
+✅ VT_Automata - Tabla congruente
+
+✅ VT_AutorizaFacPed - Tabla congruente
+
+✅ VT_AVC - Tabla congruente
+
+✅ VT_AVCCandados - Tabla congruente
+
+✅ VT_AVCCartaPorte - Tabla congruente
+
+✅ VT_AVCContenedores - Tabla congruente
+
+✅ VT_AVCDetalle - Tabla congruente
+
+✅ VT_AVCDetalleOtros - Tabla congruente
+
+✅ VT_AVCPediAmericano - Tabla congruente
+
+✅ VT_AVCTags - Tabla congruente
+
+✅ VT_AvisoAR - Tabla congruente
+
+✅ VT_AvisoAT - Tabla congruente
+
+✅ VT_AvisoBodega - Tabla congruente
+
+✅ VT_AvisoCC - Tabla congruente
+
+✅ VT_AvisoCOVE - Tabla congruente
+
+✅ VT_AvisoEnca - Tabla congruente
+
+✅ VT_AvisoLECE - Tabla congruente
+
+✅ VT_AvisoNP - Tabla congruente
+
+✅ VT_AvisoPagos - Tabla congruente
+
+❌ VT_AvisoRCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_AvisoRCasos - Tabla congruente
+
+✅ VT_AvisoRContenedor - Tabla congruente
+
+✅ VT_AvisoRemeDatExtra - Tabla congruente
+
+❌ VT_AvisoRemesas - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - ArchivoDigital
+
+✅ VT_AvisoRemesasGuias - Tabla congruente
+
+✅ VT_AvisoRUT - Tabla congruente
+
+✅ VT_AvisoSag - Tabla congruente
+
+✅ VT_AvisoSemarnatAut - Tabla congruente
+
+✅ VT_AvisosFP - Tabla congruente
+
+❌ VT_AvisosTraslado - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - AnioAT
+
+✅ VT_AvisoValidacion - Tabla congruente
+
+✅ VT_BAAA - Tabla congruente
+
+✅ VT_BAgrupaCN - Tabla congruente
+
+✅ VT_BAgrupaTrafico - Tabla congruente
+
+✅ VT_BalanceDeHort - Tabla congruente
+
+❌ VT_Bancos - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - ClaveTransferencia
+     - habilitarBanEnModulo
+
+✅ VT_BaseHonorarios - Tabla congruente
+
+✅ VT_BaseHonorariosCte - Tabla congruente
+
+✅ VT_BBitacoraGARXM - Tabla congruente
+
+✅ VT_BBitaTrafico - Tabla congruente
+
+✅ VT_BBodega - Tabla congruente
+
+✅ VT_BBultos - Tabla congruente
+
+✅ VT_BBultosDetalle - Tabla congruente
+
+✅ VT_BCFNFContribucion - Tabla congruente
+
+✅ VT_BChoferes - Tabla congruente
+
+✅ VT_BClasificacion - Tabla congruente
+
+✅ VT_BCobros - Tabla congruente
+
+✅ VT_BConceptos - Tabla congruente
+
+✅ VT_BContacto - Tabla congruente
+
+✅ VT_BCorreosGARXM - Tabla congruente
+
+✅ VT_BCorresponsal - Tabla congruente
+
+✅ VT_BCriterioGARXM - Tabla congruente
+
+✅ VT_BCTDetalle - Tabla congruente
+
+✅ VT_BCteFracNoFact - Tabla congruente
+
+✅ VT_BCteFracNoFMcia - Tabla congruente
+
+✅ VT_BCUMFUMC - Tabla congruente
+
+✅ VT_BDBFDetalleMciaDE - Tabla congruente
+
+✅ VT_BDBTDetalleMciaDE - Tabla congruente
+
+✅ VT_BDEExcedidosEmbar - Tabla congruente
+
+✅ VT_BDEExcedidosEntra - Tabla congruente
+
+✅ VT_BDEExcedidosFactu - Tabla congruente
+
+✅ VT_BDEExcedidosGast - Tabla congruente
+
+✅ VT_BDEExcedidosOC - Tabla congruente
+
+✅ VT_BDEExcedidosPedim - Tabla congruente
+
+✅ VT_BDEExcedidosTrafi - Tabla congruente
+
+✅ VT_BDestinos - Tabla congruente
+
+✅ VT_BDestinosC - Tabla congruente
+
+✅ VT_BDEventosEmbarque - Tabla congruente
+
+✅ VT_BDEventosEntradas - Tabla congruente
+
+✅ VT_BDEventosFacturas - Tabla congruente
+
+✅ VT_BDEventosGastos - Tabla congruente
+
+✅ VT_BDEventosOC - Tabla congruente
+
+✅ VT_BDEventosPediment - Tabla congruente
+
+✅ VT_BDEventosTraficos - Tabla congruente
+
+✅ VT_BDTDetalle - Tabla congruente
+
+✅ VT_BEDetalle - Tabla congruente
+
+✅ VT_BEDetaReubicacion - Tabla congruente
+
+✅ VT_BEDEtiquetas - Tabla congruente
+
+✅ VT_BEmbarques - Tabla congruente
+
+❌ VT_BEntrada - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - Bloqueado
+
+✅ VT_BEntradaContenedo - Tabla congruente
+
+✅ VT_BEntradaElec - Tabla congruente
+
+✅ VT_BEntradaGastos - Tabla congruente
+
+✅ VT_BEntradaInBond - Tabla congruente
+
+✅ VT_BErroresTrafico - Tabla congruente
+
+✅ VT_BEventos - Tabla congruente
+
+✅ VT_BFacturaGastos - Tabla congruente
+
+❌ VT_BFacturas - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - subdividirPorValor
+
+✅ VT_BFacturasFabrican - Tabla congruente
+
+✅ VT_BFCtaContables - Tabla congruente
+
+✅ VT_BFCtaCXCobro - Tabla congruente
+
+✅ VT_BFCtaXCobro - Tabla congruente
+
+✅ VT_BFDetalle - Tabla congruente
+
+✅ VT_BFormaRecep - Tabla congruente
+
+✅ VT_BForwarding - Tabla congruente
+
+✅ VT_BFotosEmbarques - Tabla congruente
+
+✅ VT_BFotosEntradas - Tabla congruente
+
+✅ VT_BGarantiaPartida - Tabla congruente
+
+✅ VT_BGposDefXCte - Tabla congruente
+
+✅ VT_BGposEventos - Tabla congruente
+
+✅ VT_BGrupos - Tabla congruente
+
+✅ VT_BGuiasEntradas - Tabla congruente
+
+✅ VT_BGuiasFacturas - Tabla congruente
+
+✅ VT_Bitacora - Tabla congruente
+
+✅ VT_BitacoraMigrar - Tabla congruente
+
+✅ VT_BitaFace - Tabla congruente
+
+✅ VT_BitaMail - Tabla congruente
+
+✅ VT_BitaModi - Tabla congruente
+
+✅ VT_BLineaTransportis - Tabla congruente
+
+✅ VT_BLock - Tabla congruente
+
+✅ VT_BLTEDetalle - Tabla congruente
+
+✅ VT_BMailXBAAA - Tabla congruente
+
+✅ VT_BMailXBBodega - Tabla congruente
+
+✅ VT_BMailXBChofer - Tabla congruente
+
+✅ VT_BMailXBContac - Tabla congruente
+
+✅ VT_BMailXBCorrespo - Tabla congruente
+
+✅ VT_BMailXBDestino - Tabla congruente
+
+✅ VT_BMailXBLTransp - Tabla congruente
+
+✅ VT_BMailXBSucesos - Tabla congruente
+
+✅ VT_BMailXCte - Tabla congruente
+
+✅ VT_BMailXEmpresa - Tabla congruente
+
+✅ VT_BMDetalle - Tabla congruente
+
+✅ VT_BMercancias - Tabla congruente
+
+✅ VT_BNotas - Tabla congruente
+
+✅ VT_BNotasDetEmbarque - Tabla congruente
+
+✅ VT_BNotasDetEntrada - Tabla congruente
+
+✅ VT_BNotasDetFactGtos - Tabla congruente
+
+✅ VT_BNotasDetFactura - Tabla congruente
+
+✅ VT_BNotasDetOC - Tabla congruente
+
+✅ VT_BNotasDetPediment - Tabla congruente
+
+✅ VT_BNotasDetTrafico - Tabla congruente
+
+✅ VT_BNumeroEmbarque - Tabla congruente
+
+✅ VT_BNumeroEntrada - Tabla congruente
+
+✅ VT_BNumeroFactura - Tabla congruente
+
+✅ VT_BNumeroOrdenCarga - Tabla congruente
+
+✅ VT_BNumeroTrafico - Tabla congruente
+
+✅ VT_BOCDetalle - Tabla congruente
+
+✅ VT_BodegaAT - Tabla congruente
+
+✅ VT_BodegasXEmpresa - Tabla congruente
+
+✅ VT_BOrdenDeCarga - Tabla congruente
+
+✅ VT_BOrigenes - Tabla congruente
+
+✅ VT_BPermIDs - Tabla congruente
+
+✅ VT_BPesosDetalle - Tabla congruente
+
+✅ VT_BPrevio - Tabla congruente
+
+✅ VT_BRangos - Tabla congruente
+
+✅ VT_BRCPVM - Tabla congruente
+
+✅ VT_BREventoSuceso - Tabla congruente
+
+✅ VT_BRFactEFTPOE - Tabla congruente
+
+✅ VT_BRFactMovtos - Tabla congruente
+
+✅ VT_BRFMovtosDeta - Tabla congruente
+
+✅ VT_BRPedTra - Tabla congruente
+
+✅ VT_BRPTEF - Tabla congruente
+
+✅ VT_BRSCatalogos - Tabla congruente
+
+✅ VT_BServicioLinea - Tabla congruente
+
+✅ VT_BSituaciones - Tabla congruente
+
+✅ VT_BSituacionesDeta - Tabla congruente
+
+✅ VT_BSituacionesDetaE - Tabla congruente
+
+✅ VT_BSucesos - Tabla congruente
+
+✅ VT_BSucursalConf - Tabla congruente
+
+✅ VT_BSucursales - Tabla congruente
+
+❌ VT_BTCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_BTDestinatarios - Tabla congruente
+
+✅ VT_BTDetalle - Tabla congruente
+
+✅ VT_BTEDetalle - Tabla congruente
+
+✅ VT_BTelXBAAA - Tabla congruente
+
+✅ VT_BTelXBBodega - Tabla congruente
+
+✅ VT_BTelXBChofer - Tabla congruente
+
+✅ VT_BTelXBContacto - Tabla congruente
+
+✅ VT_BTelXBCorrespo - Tabla congruente
+
+✅ VT_BTelXBDestinos - Tabla congruente
+
+✅ VT_BTelXBLTranspo - Tabla congruente
+
+✅ VT_BTelXBSucesos - Tabla congruente
+
+✅ VT_BTelXEmpresa - Tabla congruente
+
+✅ VT_BTiempos - Tabla congruente
+
+✅ VT_BTipoVehiculos - Tabla congruente
+
+✅ VT_BTrafico - Tabla congruente
+
+✅ VT_BTraficoContenedo - Tabla congruente
+
+✅ VT_BultoTransitos - Tabla congruente
+
+✅ VT_Buques - Tabla congruente
+
+✅ VT_Button - Tabla congruente
+
+✅ VT_BVistas - Tabla congruente
+
+✅ VT_CalculoHonorarios - Tabla congruente
+
+✅ VT_CambioEstructuras - Tabla congruente
+
+✅ VT_CambioFactura - Tabla congruente
+
+✅ VT_CamionesYUCdeTS - Tabla congruente
+
+✅ VT_CandadoComplePago - Tabla congruente
+
+✅ VT_CandadoDeposito - Tabla congruente
+
+✅ VT_CandadoFactura - Tabla congruente
+
+✅ VT_CargaConsolida - Tabla congruente
+
+✅ VT_Casos - Tabla congruente
+
+✅ VT_CasosCopia - Tabla congruente
+
+✅ VT_CasosRemesaAerea - Tabla congruente
+
+✅ VT_CasosRemesas - Tabla congruente
+
+✅ VT_CatalogoTransmi - Tabla congruente
+
+✅ VT_CatalogoTransSema - Tabla congruente
+
+✅ VT_CertificadosFE - Tabla congruente
+
+✅ VT_CFDetalleMciaDE - Tabla congruente
+
+✅ VT_CfdiRelacionaComP - Tabla congruente
+
+✅ VT_CfdiRelacionaFact - Tabla congruente
+
+✅ VT_CfdiRelacionaNC - Tabla congruente
+
+✅ VT_CierreDeMes - Tabla congruente
+
+✅ VT_CierrePorDia - Tabla congruente
+
+✅ VT_ClaveNoCobroImpue - Tabla congruente
+
+✅ VT_ClavesPorRangoCte - Tabla congruente
+
+✅ VT_ClavesPorRangoGlo - Tabla congruente
+
+✅ VT_ClienteClavesPed - Tabla congruente
+
+✅ VT_ClienteDefCasos - Tabla congruente
+
+✅ VT_ClienteDocs - Tabla congruente
+
+✅ VT_ClienteDocumen - Tabla congruente
+
+✅ VT_ClienteDocumentos - Tabla congruente
+
+✅ VT_ClienteFraccion - Tabla congruente
+
+✅ VT_ClientePatAdu - Tabla congruente
+
+✅ VT_ClientePersonasMV - Tabla congruente
+
+❌ VT_Clientes - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - DefaultKeyCer
+     - ObservacionesExp
+     - ReferenciaPedimento
+
+✅ VT_ClientesAFacturar - Tabla congruente
+
+✅ VT_ClientesDireccion - Tabla congruente
+
+✅ VT_ClienteSectores - Tabla congruente
+
+✅ VT_ClientesTipoDocto - Tabla congruente
+
+✅ VT_ClientesXDeptos - Tabla congruente
+
+✅ VT_Cobradores - Tabla congruente
+
+✅ VT_CodiReme - Tabla congruente
+
+✅ VT_Comisionistas - Tabla congruente
+
+✅ VT_Compensaciones - Tabla congruente
+
+✅ VT_ComplementoDePago - Tabla congruente
+
+❌ VT_Concepto - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - HeredarCobroCptoPed
+
+✅ VT_ConceptoPorClient - Tabla congruente
+
+✅ VT_ConceptoPorPedime - Tabla congruente
+
+✅ VT_ConceptoPorRefere - Tabla congruente
+
+✅ VT_ConceptosXComisio - Tabla congruente
+
+✅ VT_ConceptoTipoDocto - Tabla congruente
+
+✅ VT_ConceptoXCteNotas - Tabla congruente
+
+✅ VT_ConexionesHub - Tabla congruente
+
+✅ VT_ConfiguracionCte - Tabla congruente
+
+❌ VT_ConfiguracionGral - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - AfecSaldoPagarFacCXP
+     - ProductoGeneral
+     - AutoriPagoFacturaCXP
+
+❌ VT_ConfProveXEmpresa - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_ConRecibosPorDepo - Tabla congruente
+
+✅ VT_ConsecutiDeRecibo - Tabla congruente
+
+✅ VT_ConsecutivoCobran - Tabla congruente
+
+✅ VT_ConsecutivosVal - Tabla congruente
+
+✅ VT_ConsultaQRSAT - Tabla congruente
+
+✅ VT_ContHortaliza - Tabla congruente
+
+✅ VT_ContraRecibos - Tabla congruente
+
+✅ VT_ContribPEMonto - Tabla congruente
+
+✅ VT_ControlRetorno - Tabla congruente
+
+✅ VT_CopiaSimple - Tabla congruente
+
+✅ VT_CorreosGenerales - Tabla congruente
+
+✅ VT_CorreosXCliente - Tabla congruente
+
+✅ VT_CorreosXOficinas - Tabla congruente
+
+✅ VT_CptoADescontarCte - Tabla congruente
+
+✅ VT_CptoADescontarGlo - Tabla congruente
+
+❌ VT_CtaContables - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - FechaSaldoInicial
+     - SaldoInicial
+     - HeredarInfoProforma
+     - AfecSaldoPagarFacCXP
+     - Serie
+     - SaldoInicialFondo
+
+✅ VT_CtaContaNiveDepto - Tabla congruente
+
+✅ VT_CtaContaXConcepto - Tabla congruente
+
+✅ VT_CtaContXSerieYCte - Tabla congruente
+
+❌ VT_CteDefaultCons - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - TransporteArriboGen
+     - TransporteSalidaGen
+     - TransporteTerritGen
+
+✅ VT_CteDefConsDetaPA - Tabla congruente
+
+✅ VT_CteDefProveedor - Tabla congruente
+
+✅ VT_CteFraccContribuc - Tabla congruente
+
+✅ VT_CteFracFotos - Tabla congruente
+
+✅ VT_CteNExportadorAut - Tabla congruente
+
+✅ VT_CuentaOrdenante - Tabla congruente
+
+✅ VT_Cuentas - Tabla congruente
+
+✅ VT_CuentasBancarias - Tabla congruente
+
+❌ VT_CuentasBancoProve - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_CuentasClientePAS - Tabla congruente
+
+✅ VT_CuentasClientes - Tabla congruente
+
+✅ VT_CURPS - Tabla congruente
+
+✅ VT_CURPSHTokens - Tabla congruente
+
+✅ VT_CXPCandadoDoctota - Tabla congruente
+
+✅ VT_CXPDetaDoctos - Tabla congruente
+
+✅ VT_CXPDetaDoctotal - Tabla congruente
+
+✅ VT_CXPDoctos - Tabla congruente
+
+❌ VT_CXPDoctotal - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - CuentasBancoProve
+     - AutorizaPago
+     - FechaAutorizaPago
+     - HoraAutorizaPago
+     - UsuarioAutorizaPago
+
+✅ VT_CXPFoliosDePagos - Tabla congruente
+
+✅ VT_CXPGrupoProductos - Tabla congruente
+
+✅ VT_CXPImpuestosFact - Tabla congruente
+
+✅ VT_CXPMovtos - Tabla congruente
+
+✅ VT_CXPProductos - Tabla congruente
+
+✅ VT_CXPTipDocXProvee - Tabla congruente
+
+❌ VT_CXPTipoDocumento - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - Fondo
+     - TipoCuenta
+     - Sucursal
+
+✅ VT_CXPTiposDeCambio - Tabla congruente
+
+✅ VT_DARDetalleMciaDE - Tabla congruente
+
+✅ VT_DBodegasXEmpresa - Tabla congruente
+
+✅ VT_Departamentos - Tabla congruente
+
+✅ VT_DescargosHort - Tabla congruente
+
+✅ VT_DesgloseDeposito - Tabla congruente
+
+✅ VT_Destinatario - Tabla congruente
+
+✅ VT_DetaCargaConsol - Tabla congruente
+
+✅ VT_DetaCompleDePago - Tabla congruente
+
+✅ VT_DetaDeValesDeCaja - Tabla congruente
+
+✅ VT_DetaEfectivoDlls - Tabla congruente
+
+✅ VT_DetaEfectivoPesos - Tabla congruente
+
+✅ VT_DetAerea - Tabla congruente
+
+✅ VT_DetaLimiCredCpto - Tabla congruente
+
+✅ VT_DetalleAereaEX - Tabla congruente
+
+✅ VT_DetalleAR - Tabla congruente
+
+✅ VT_DetalleDelReporte - Tabla congruente
+
+✅ VT_DetalleDocumento - Tabla congruente
+
+✅ VT_DetalleFactura - Tabla congruente
+
+✅ VT_DetalleLegumbre - Tabla congruente
+
+✅ VT_DetallEncargoConf - Tabla congruente
+
+✅ VT_DetallePedimento - Tabla congruente
+
+✅ VT_DetaNotaCredito - Tabla congruente
+
+✅ VT_DetaReme - Tabla congruente
+
+✅ VT_DiasDeCredito - Tabla congruente
+
+✅ VT_Diferencias - Tabla congruente
+
+✅ VT_DireccionDeCorreo - Tabla congruente
+
+❌ VT_DirecCorreInterno - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - EnviarInfoPago
+
+✅ VT_DireDeCorreoProve - Tabla congruente
+
+✅ VT_Doctos - Tabla congruente
+
+✅ VT_DoctosRelacionaCP - Tabla congruente
+
+✅ VT_Doctotal - Tabla congruente
+
+❌ VT_DocumentosWServer - Incongruencias encontradas:
+   • Columnas solo en archivo:
+     - BNotasDetPedimentID
+     - Estatus
+
+✅ VT_DPHDetalleMciaDE - Tabla congruente
+
+✅ VT_DRADetalleMciaDE - Tabla congruente
+
+✅ VT_DRDetalleMciaDE - Tabla congruente
+
+✅ VT_DRHDetalleMciaDE - Tabla congruente
+
+❌ VT_DTA - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_DummyView - Tabla congruente
+
+✅ VT_DummyView2 - Tabla congruente
+
+✅ VT_DummyViewBlob - Tabla congruente
+
+✅ VT_eDespacho - Tabla congruente
+
+✅ VT_eDespachoBLS - Tabla congruente
+
+✅ VT_eDespachoDetalle - Tabla congruente
+
+✅ VT_eDespachoDetInspe - Tabla congruente
+
+✅ VT_eDespBLSNESellos - Tabla congruente
+
+✅ VT_eDespBLSNumEquipo - Tabla congruente
+
+✅ VT_EDImagenArchivo - Tabla congruente
+
+✅ VT_EDTipoDocumento - Tabla congruente
+
+✅ VT_EfectivoDolares - Tabla congruente
+
+✅ VT_EfectivoPesos - Tabla congruente
+
+✅ VT_EjecutivoClientes - Tabla congruente
+
+✅ VT_EjecutivoConcepto - Tabla congruente
+
+✅ VT_EjecutivoDeVentas - Tabla congruente
+
+✅ VT_eMailConfig - Tabla congruente
+
+❌ VT_EmbaCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_EmbaDeta - Tabla congruente
+
+✅ VT_Embarque - Tabla congruente
+
+✅ VT_EmbarqueContened - Tabla congruente
+
+✅ VT_EmbarqueDatExtra - Tabla congruente
+
+✅ VT_EmbarquesABI - Tabla congruente
+
+✅ VT_EmbarquesGuias - Tabla congruente
+
+✅ VT_Empresa - Tabla congruente
+
+✅ VT_EmpresaFact - Tabla congruente
+
+✅ VT_Empresas - Tabla congruente
+
+✅ VT_EmpresasRFC - Tabla congruente
+
+✅ VT_EncabezaDelReport - Tabla congruente
+
+✅ VT_EncaRemeFact - Tabla congruente
+
+✅ VT_EncargoConferido - Tabla congruente
+
+✅ VT_ERFCDetalle - Tabla congruente
+
+✅ VT_ErroresCartera - Tabla congruente
+
+✅ VT_ErroresFactura - Tabla congruente
+
+✅ VT_ExpedienteDigital - Tabla congruente
+
+✅ VT_Exportsels - Tabla congruente
+
+✅ VT_Fabricantes - Tabla congruente
+
+✅ VT_FactElec - Tabla congruente
+
+✅ VT_FactINI - Tabla congruente
+
+✅ VT_Factura - Tabla congruente
+
+✅ VT_FacturaAvisosTras - Tabla congruente
+
+✅ VT_FacturaDatExtra - Tabla congruente
+
+✅ VT_FacturaP - Tabla congruente
+
+✅ VT_FacturasXPC - Tabla congruente
+
+✅ VT_FoliosComplePago - Tabla congruente
+
+✅ VT_FoliosDeCobranza - Tabla congruente
+
+✅ VT_FoliosDeDepositos - Tabla congruente
+
+✅ VT_FoliosFact - Tabla congruente
+
+✅ VT_FoliosNotaCredito - Tabla congruente
+
+✅ VT_FraccionesProhibi - Tabla congruente
+
+✅ VT_FraccionIndustria - Tabla congruente
+
+✅ VT_GastosExternos - Tabla congruente
+
+✅ VT_GastosPorFacturar - Tabla congruente
+
+✅ VT_GastosXCuentaCte - Tabla congruente
+
+✅ VT_GeneradorADP - Tabla congruente
+
+❌ VT_General - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - ArchDigitalFacEnAuto
+
+✅ VT_GrupoConcepto - Tabla congruente
+
+✅ VT_HistorialVal - Tabla congruente
+
+✅ VT_ImpresionAutAR - Tabla congruente
+
+✅ VT_ImpuesCobraAparte - Tabla congruente
+
+✅ VT_ImpuestosDRCP - Tabla congruente
+
+❌ VT_INPC - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_Inspectores - Tabla congruente
+
+✅ VT_Justificaciones - Tabla congruente
+
+✅ VT_Leyendas - Tabla congruente
+
+✅ VT_LeyendasSagar - Tabla congruente
+
+✅ VT_LiberacionECE - Tabla congruente
+
+✅ VT_LimiteCreditoCpto - Tabla congruente
+
+✅ VT_LineasNavieras - Tabla congruente
+
+✅ VT_LineasTransito - Tabla congruente
+
+✅ VT_LL_RepArea - Tabla congruente
+
+✅ VT_LL_RepLay - Tabla congruente
+
+✅ VT_Lock - Tabla congruente
+
+✅ VT_LockGeneral - Tabla congruente
+
+✅ VT_LotesDeSagar - Tabla congruente
+
+✅ VT_LugarExpedicion - Tabla congruente
+
+✅ VT_ManiDeta - Tabla congruente
+
+✅ VT_ManiDetaDoctos - Tabla congruente
+
+✅ VT_ManiFacturas - Tabla congruente
+
+✅ VT_ManiFacturasIncDc - Tabla congruente
+
+✅ VT_ManiPedimentos - Tabla congruente
+
+✅ VT_ManiProveedores - Tabla congruente
+
+✅ VT_ManiProveedoresED - Tabla congruente
+
+✅ VT_ManiValo - Tabla congruente
+
+✅ VT_ManiValoED - Tabla congruente
+
+✅ VT_ManiValoPersonas - Tabla congruente
+
+✅ VT_Mapeos - Tabla congruente
+
+✅ VT_MercanciaAvisos - Tabla congruente
+
+✅ VT_MercanciaLegumbre - Tabla congruente
+
+✅ VT_MetodoDePago - Tabla congruente
+
+✅ VT_MetodoPagoFactura - Tabla congruente
+
+✅ VT_MetodoPagoNotaCre - Tabla congruente
+
+❌ VT_Modulos - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - QRAutorizarPaValidar
+     - CartaProtestaAlADP
+     - RestringirRemSemDif
+
+✅ VT_MovtoFin - Tabla congruente
+
+✅ VT_Movtos - Tabla congruente
+
+✅ VT_MovtosDeCancelada - Tabla congruente
+
+✅ VT_MuestrasDeSagar - Tabla congruente
+
+❌ VT_Multas - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_NGafeteUnico - Tabla congruente
+
+✅ VT_NoIdentifConcepto - Tabla congruente
+
+✅ VT_NOPedimento - Tabla congruente
+
+✅ VT_NOPedimentoDeta - Tabla congruente
+
+✅ VT_NotaContraRecibo - Tabla congruente
+
+✅ VT_NotaCreCarDigital - Tabla congruente
+
+✅ VT_NotasGenerales - Tabla congruente
+
+✅ VT_Notificaciones - Tabla congruente
+
+✅ VT_NumeroCuentaPago - Tabla congruente
+
+✅ VT_NumerosAT - Tabla congruente
+
+✅ VT_NumerosATCliente - Tabla congruente
+
+✅ VT_NumerosAVC - Tabla congruente
+
+✅ VT_NumerosBodXEmp - Tabla congruente
+
+✅ VT_NumerosCliente - Tabla congruente
+
+✅ VT_NumerosDODAQR - Tabla congruente
+
+✅ VT_NumerosEncargosCF - Tabla congruente
+
+✅ VT_NumerosLECE - Tabla congruente
+
+✅ VT_NumerosNOP - Tabla congruente
+
+✅ VT_NumerosPedi - Tabla congruente
+
+✅ VT_NumerosProforma - Tabla congruente
+
+✅ VT_NumerosReferencia - Tabla congruente
+
+✅ VT_NumerosRelaDocu - Tabla congruente
+
+✅ VT_NumerosRUT - Tabla congruente
+
+✅ VT_NumerosSaga - Tabla congruente
+
+✅ VT_NumerosSema - Tabla congruente
+
+✅ VT_NumerosSemaAuto - Tabla congruente
+
+✅ VT_OrdenCXF - Tabla congruente
+
+✅ VT_OrdenCXP - Tabla congruente
+
+✅ VT_Pagina - Tabla congruente
+
+✅ VT_PaginaTipoUsuario - Tabla congruente
+
+✅ VT_PaginaTipUsuButto - Tabla congruente
+
+✅ VT_PalabrasPrev - Tabla congruente
+
+✅ VT_PartidaC352 - Tabla congruente
+
+✅ VT_PartidaContrib - Tabla congruente
+
+❌ VT_PartidaDatosExtra - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - TipoEmisorCO
+     - NumeroDeRollo
+
+✅ VT_PartidaGarantias - Tabla congruente
+
+✅ VT_PartidaMciaDE - Tabla congruente
+
+✅ VT_PartidaMercancias - Tabla congruente
+
+✅ VT_PartidaPermisos - Tabla congruente
+
+✅ VT_Partidas - Tabla congruente
+
+✅ VT_PartidasHortaliza - Tabla congruente
+
+✅ VT_PatAduNoCobroImpu - Tabla congruente
+
+✅ VT_PatenteCliente - Tabla congruente
+
+✅ VT_PatenteDireccion - Tabla congruente
+
+✅ VT_Patentes - Tabla congruente
+
+✅ VT_PatentesEC - Tabla congruente
+
+✅ VT_PatentesFact - Tabla congruente
+
+✅ VT_PCamposPar - Tabla congruente
+
+✅ VT_PCamposPed - Tabla congruente
+
+✅ VT_PClavesPedi2 - Tabla congruente
+
+✅ VT_PClavesPedimento - Tabla congruente
+
+✅ VT_PDFAutomaticoPE - Tabla congruente
+
+❌ VT_PedCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_PedContraparte - Tabla congruente
+
+✅ VT_PedFactFabricante - Tabla congruente
+
+✅ VT_PedimentoABI - Tabla congruente
+
+✅ VT_PedimentoAlerta - Tabla congruente
+
+✅ VT_PedimentoCandados - Tabla congruente
+
+❌ VT_PedimentoConfig - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_PedimentoContened - Tabla congruente
+
+✅ VT_PedimentoCuenta - Tabla congruente
+
+❌ VT_PedimentoDatExtra - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - EmpresaLucyPE
+
+✅ VT_PedimentoDescargo - Tabla congruente
+
+✅ VT_PedimentoDestinat - Tabla congruente
+
+✅ VT_PedimentoDIE - Tabla congruente
+
+❌ VT_PedimentoFacturas - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - TipoEmisorCO
+
+✅ VT_PedimentoGarantia - Tabla congruente
+
+✅ VT_PedimentoGuias - Tabla congruente
+
+✅ VT_PedimentoImagenes - Tabla congruente
+
+✅ VT_PedimentoInconsis - Tabla congruente
+
+✅ VT_PedimentoJustific - Tabla congruente
+
+✅ VT_PedimentoPruebaSu - Tabla congruente
+
+✅ VT_Pedimentos - Tabla congruente
+
+✅ VT_PedimentoSOIA - Tabla congruente
+
+✅ VT_PedimentosOtros - Tabla congruente
+
+✅ VT_PedimentoTranspor - Tabla congruente
+
+✅ VT_PediSinFacturar - Tabla congruente
+
+✅ VT_PedObservaciones - Tabla congruente
+
+✅ VT_PermIDs - Tabla congruente
+
+✅ VT_PermisosCFraccion - Tabla congruente
+
+✅ VT_PermisosCliente - Tabla congruente
+
+✅ VT_PFormatos - Tabla congruente
+
+❌ VT_PFormatosDeta - Incongruencias encontradas:
+   • Columnas solo en archivo:
+     - CampoEnLaTabla
+
+✅ VT_PolizaContabilida - Tabla congruente
+
+✅ VT_PolizaVanguardia - Tabla congruente
+
+✅ VT_PpsXCPer - Tabla congruente
+
+❌ VT_Prevalid - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_ProcesosAutomatic - Tabla congruente
+
+✅ VT_ProdBalanceHorta - Tabla congruente
+
+✅ VT_ProducServicCFDI - Tabla congruente
+
+✅ VT_Productor - Tabla congruente
+
+✅ VT_Proveedores - Tabla congruente
+
+✅ VT_ProveedorXConcept - Tabla congruente
+
+✅ VT_ProveedorXImpuest - Tabla congruente
+
+✅ VT_ProveedorXProduc - Tabla congruente
+
+✅ VT_PrvNExportadorAut - Tabla congruente
+
+✅ VT_Querys - Tabla congruente
+
+❌ VT_RAereaCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_RanCteXFraccion - Tabla congruente
+
+✅ VT_RanCteXIdentifica - Tabla congruente
+
+✅ VT_RanCteXPatenteAdu - Tabla congruente
+
+✅ VT_RanCteXPermiso - Tabla congruente
+
+✅ VT_RanCteXTransporte - Tabla congruente
+
+✅ VT_Rangos - Tabla congruente
+
+✅ VT_RangosDos - Tabla congruente
+
+✅ VT_RangosPorCliente - Tabla congruente
+
+✅ VT_RangosPorCteDos - Tabla congruente
+
+✅ VT_RangosXFraccion - Tabla congruente
+
+✅ VT_RangosXIdentifica - Tabla congruente
+
+✅ VT_RangosXPatenteAdu - Tabla congruente
+
+✅ VT_RangosXPermiso - Tabla congruente
+
+✅ VT_RangosXTransporte - Tabla congruente
+
+✅ VT_RCasos - Tabla congruente
+
+✅ VT_RContenedorCandad - Tabla congruente
+
+✅ VT_RCteCve - Tabla congruente
+
+✅ VT_RDContenedores - Tabla congruente
+
+✅ VT_RDestinatarioAR - Tabla congruente
+
+✅ VT_RDestinatarioFact - Tabla congruente
+
+✅ VT_RDestinatarioRA - Tabla congruente
+
+✅ VT_RDestinatarioRF - Tabla congruente
+
+✅ VT_RDestinatarioRM - Tabla congruente
+
+✅ VT_RDestinatRADeta - Tabla congruente
+
+✅ VT_RDoctosDetaCOVE - Tabla congruente
+
+✅ VT_RDocumConCandados - Tabla congruente
+
+✅ VT_RDocumDHistdodaQR - Tabla congruente
+
+✅ VT_RDocumentos - Tabla congruente
+
+✅ VT_RDocumentosCartaP - Tabla congruente
+
+✅ VT_RDocumentosDeta - Tabla congruente
+
+✅ VT_RDocumentosDodaQR - Tabla congruente
+
+✅ VT_RDocumentosPedAme - Tabla congruente
+
+✅ VT_RefePagoBancarias - Tabla congruente
+
+✅ VT_RegimenFactura - Tabla congruente
+
+✅ VT_RegistroUnicoTran - Tabla congruente
+
+✅ VT_RelacionCAATNGU - Tabla congruente
+
+✅ VT_RelacionFacturas - Tabla congruente
+
+✅ VT_RelacionProveedor - Tabla congruente
+
+✅ VT_RelacionProvFabr - Tabla congruente
+
+✅ VT_RelUsuarioCtes - Tabla congruente
+
+❌ VT_RemAerea - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - ArchivoDigital
+
+✅ VT_RemAereaCandados - Tabla congruente
+
+✅ VT_RemeHort - Tabla congruente
+
+❌ VT_RemesaCartaPorte - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_Remesas - Tabla congruente
+
+✅ VT_RemesasABI - Tabla congruente
+
+✅ VT_RemesasAereasEX - Tabla congruente
+
+✅ VT_RemesasCandados - Tabla congruente
+
+✅ VT_RemesasContened - Tabla congruente
+
+✅ VT_RemesasFacturadas - Tabla congruente
+
+✅ VT_RemesasGuias - Tabla congruente
+
+❌ VT_Represen - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - Mancomunado
+
+✅ VT_RFCConsulta - Tabla congruente
+
+✅ VT_RFCProhibido - Tabla congruente
+
+✅ VT_RPartidaContrib - Tabla congruente
+
+✅ VT_RPartidaGarantias - Tabla congruente
+
+✅ VT_RPartidaMciaDE - Tabla congruente
+
+✅ VT_RPartidaMercancia - Tabla congruente
+
+✅ VT_RPartidaOC - Tabla congruente
+
+✅ VT_RPartidaPermisos - Tabla congruente
+
+✅ VT_RPartidas - Tabla congruente
+
+✅ VT_RPASBancos - Tabla congruente
+
+✅ VT_RRemContenedCanda - Tabla congruente
+
+✅ VT_RUMAbreviacion - Tabla congruente
+
+✅ VT_RutaBanco - Tabla congruente
+
+✅ VT_Sagar - Tabla congruente
+
+✅ VT_SagarDetalle - Tabla congruente
+
+✅ VT_SagarDetalleNC - Tabla congruente
+
+✅ VT_SagareDocuments - Tabla congruente
+
+✅ VT_SagarIni - Tabla congruente
+
+✅ VT_SagarVehiculo - Tabla congruente
+
+✅ VT_SaldoCte - Tabla congruente
+
+✅ VT_SaldoCtePorMes - Tabla congruente
+
+✅ VT_SecuenciaDePago - Tabla congruente
+
+✅ VT_SeguMultiEmpresa - Tabla congruente
+
+✅ VT_Semarnat - Tabla congruente
+
+✅ VT_SemarnatADDoctos - Tabla congruente
+
+✅ VT_SemarnatADetalle - Tabla congruente
+
+✅ VT_SemarnatAFacturas - Tabla congruente
+
+✅ VT_SemarnatAutomati - Tabla congruente
+
+✅ VT_SemarnatDetalle - Tabla congruente
+
+✅ VT_ServiTransporteLT - Tabla congruente
+
+✅ VT_SICEXCte - Tabla congruente
+
+✅ VT_SMTPUsers - Tabla congruente
+
+✅ VT_SubOutlayt - Tabla congruente
+
+✅ VT_SubOutlayt2 - Tabla congruente
+
+❌ VT_Tasa - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_TCParaDepositos - Tabla congruente
+
+✅ VT_TCPorDocumento - Tabla congruente
+
+✅ VT_Telefonos - Tabla congruente
+
+❌ VT_TipoDeCambio - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+✅ VT_TipoDeCliente - Tabla congruente
+
+❌ VT_TipoDeDocumento - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - Fondo
+
+✅ VT_TipoDocumentoCTE - Tabla congruente
+
+✅ VT_TiposDeFolios - Tabla congruente
+
+✅ VT_TiposDeMercancias - Tabla congruente
+
+✅ VT_TipoUsuario - Tabla congruente
+
+✅ VT_Totales - Tabla congruente
+
+✅ VT_TraficoINI - Tabla congruente
+
+❌ VT_TransporTransitos - Incongruencias encontradas:
+   • Columnas solo en BD:
+     - EsExtranjero
+
+✅ VT_UnidadMedidaFact - Tabla congruente
+
+✅ VT_Usuario - Tabla congruente
+
+✅ VT_Usuarios - Tabla congruente
+
+✅ VT_UsuariosClavesP - Tabla congruente
+
+✅ VT_UsuariosClientes - Tabla congruente
+
+✅ VT_UsuariosCuentas - Tabla congruente
+
+✅ VT_UsuariosPatAdu - Tabla congruente
+
+✅ VT_UsuariosXDeptos - Tabla congruente
+
+✅ VT_Vales - Tabla congruente
+
+✅ VT_ValesDeCaja - Tabla congruente
+
+✅ VT_ValidaAR - Tabla congruente
+
+✅ VT_ValidaAT - Tabla congruente
+
+✅ VT_ValidaBancos - Tabla congruente
+
+✅ VT_ValidaBodega - Tabla congruente
+
+✅ VT_ValidaCC - Tabla congruente
+
+✅ VT_ValidaCOVE - Tabla congruente
+
+✅ VT_ValidaEncargoC - Tabla congruente
+
+✅ VT_ValidaLECE - Tabla congruente
+
+✅ VT_ValidaNP - Tabla congruente
+
+✅ VT_ValidaRUT - Tabla congruente
+
+✅ VT_ValidaSagar - Tabla congruente
+
+✅ VT_ValidaSemarnatAut - Tabla congruente
+
+✅ VT_ValiData - Tabla congruente
+
+✅ VT_VehiculosTransit - Tabla congruente
+
+✅ VT_Veterinario - Tabla congruente
+
+❌ VT_XMLRelaCove - Incongruencias encontradas:
+   • Tabla existe en BD pero no en archivo
+
+Resumen:
+Total de tablas revisadas: 648
+Tablas congruentes: 608
+Tablas con diferencias: 40
