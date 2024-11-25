@@ -1,7 +1,9 @@
 using System;
 using System.IO;
 using System.Text;
-using IronPdf;
+using System.Threading.Tasks;
+using PuppeteerSharp;
+using PuppeteerSharp.Media;
 
 namespace SchemaComparison.Core
 {
@@ -23,6 +25,7 @@ namespace SchemaComparison.Core
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset='utf-8'>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,6 +68,9 @@ namespace SchemaComparison.Core
             padding: 15px;
             border-radius: 5px;
             border: 1px solid #dee2e6;
+            font-size: 14px;
+            line-height: 1.4;
+            overflow-x: auto;
         }
         table {
             width: 100%;
@@ -83,11 +89,21 @@ namespace SchemaComparison.Core
         tr:nth-child(even) {
             background-color: #f8f9fa;
         }
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+            pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+        }
     </style>
 </head>
 <body>
     <div class='header'>
-        <h1>Reporte de Análisis de Esquema</h1>
+        <h1>Reporte de Análisis de Esquema de Base de Datos</h1>
         <p>Generado el: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + @"</p>
     </div>
 
@@ -110,23 +126,45 @@ namespace SchemaComparison.Core
             return html.ToString();
         }
 
-        public void GeneratePDF(string outputPath)
+        public async Task GeneratePDFAsync(string outputPath)
         {
-            var html = GenerateHTML();
-            var renderer = new ChromePdfRenderer();
+            Console.WriteLine("Iniciando generación de PDF...");
             
-            // Configurar opciones del PDF
-            renderer.RenderingOptions.PaperSize = IronPdf.Rendering.PdfPaperSize.Custom;
-            renderer.RenderingOptions.SetCustomPaperSizeInInches(8.5f, 11f);
-            renderer.RenderingOptions.MarginTop = 20;
-            renderer.RenderingOptions.MarginBottom = 20;
-            renderer.RenderingOptions.MarginLeft = 20;
-            renderer.RenderingOptions.MarginRight = 20;
-            renderer.RenderingOptions.CreatePdfFormsFromHtml = true;
-            
-            // Generar PDF
-            var pdf = renderer.RenderHtmlAsPdf(html);
-            pdf.SaveAs(outputPath);
+            Console.WriteLine("Verificando instalación de Chromium...");
+            await new BrowserFetcher().DownloadAsync();
+
+            Console.WriteLine("Iniciando navegador...");
+            var browser = await Puppeteer.LaunchAsync(new LaunchOptions
+            {
+                Headless = true
+            });
+
+            try
+            {
+                Console.WriteLine("Generando contenido...");
+                using var page = await browser.NewPageAsync();
+                await page.SetContentAsync(GenerateHTML());
+
+                Console.WriteLine("Creando PDF...");
+                await page.PdfAsync(outputPath, new PdfOptions
+                {
+                    Format = PaperFormat.A4,
+                    PrintBackground = true,
+                    MarginOptions = new MarginOptions
+                    {
+                        Top = "20mm",
+                        Bottom = "20mm",
+                        Left = "20mm",
+                        Right = "20mm"
+                    }
+                });
+
+                Console.WriteLine("PDF generado exitosamente.");
+            }
+            finally
+            {
+                await browser.CloseAsync();
+            }
         }
     }
 }

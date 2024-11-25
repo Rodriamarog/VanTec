@@ -12,11 +12,11 @@ class Program
         {
             string connectionString = "Server=DESKTOP-AUSLRP2;Database=Darwin;Trusted_Connection=True;TrustServerCertificate=True;";
             string entityFilesPath = @"C:\netC#\apps\Datos_SQLServer\Datos_SQLServer\Datos\Diccionario";
-           
+            
             // Obtener la ruta específica del proyecto Console
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string projectPath = Path.GetFullPath(Path.Combine(baseDirectory, "..", "..", ".."));
-           
+            
             // Verificar que estamos en la carpeta correcta
             if (!projectPath.EndsWith("SchemaComparison.Console"))
             {
@@ -25,23 +25,23 @@ class Program
                     $"Ruta actual: {projectPath}"
                 );
             }
-           
+            
             // Crear carpeta Reportes en el directorio específico
             string reportsFolderPath = Path.Combine(projectPath, "Reportes");
             Directory.CreateDirectory(reportsFolderPath);
-           
+            
             // Run SchemaComparisonTool
             var comparisonTool = new SchemaComparisonTool(connectionString, entityFilesPath);
             var result = comparisonTool.CompareSchemas();
-           
+            
             string report = comparisonTool.GenerateReport(result);
             Console.WriteLine(report);
-            
+
             // Guardar reporte en la carpeta Reportes
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             string fileName = Path.Combine(reportsFolderPath, $"ReporteComparacion_{timestamp}.txt");
             File.WriteAllText(fileName, report);
-           
+            
             Console.WriteLine($"\nReporte guardado en: {fileName}");
             
             // Mostrar un mensaje más amigable de la ubicación del reporte
@@ -57,7 +57,7 @@ class Program
             // Guardar reporte detallado en la carpeta Reportes
             string analyzerFileName = Path.Combine(reportsFolderPath, $"ReporteDarwinContext_{timestamp}.txt");
             File.WriteAllText(analyzerFileName, analyzerReport);
-           
+            
             Console.WriteLine($"\nReporte detallado guardado en: {analyzerFileName}");
             
             // Mostrar un mensaje más amigable de la ubicación del reporte detallado
@@ -66,11 +66,12 @@ class Program
             Console.WriteLine($"Reporte detallado guardado en la carpeta del proyecto: {analyzerRelativePath}");
 
             // Generar reporte PDF combinado
+            Console.WriteLine("\nGenerando reporte PDF combinado...");
             string pdfFileName = Path.Combine(reportsFolderPath, $"ReporteCompleto_{timestamp}.pdf");
             var htmlGenerator = new HTMLReportGenerator(report, analyzerReport);
-            htmlGenerator.GeneratePDF(pdfFileName);
+            await htmlGenerator.GeneratePDFAsync(pdfFileName);
 
-            Console.WriteLine($"\nReporte PDF combinado generado en: {pdfFileName}");
+            Console.WriteLine($"Reporte PDF combinado generado en: {pdfFileName}");
             string pdfRelativePath = Path.Combine("SchemaComparison.Console", "Reportes",
                                              $"ReporteCompleto_{timestamp}.pdf");
             Console.WriteLine($"Reporte PDF guardado en la carpeta del proyecto: {pdfRelativePath}");
