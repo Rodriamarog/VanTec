@@ -11,11 +11,13 @@ namespace SchemaComparison.Core
     {
         private readonly string _basicReport;
         private readonly string _detailedReport;
+        private readonly string _indexReport;
 
-        public HTMLReportGenerator(string basicReport, string detailedReport)
+        public HTMLReportGenerator(string basicReport, string detailedReport, string indexReport)
         {
             _basicReport = basicReport;
             _detailedReport = detailedReport;
+            _indexReport = indexReport;
         }
 
         private string GenerateHTML()
@@ -89,6 +91,30 @@ namespace SchemaComparison.Core
         tr:nth-child(even) {
             background-color: #f8f9fa;
         }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin-bottom: 10px;
+        }
+        .toc a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
         @media print {
             body {
                 margin: 0;
@@ -103,22 +129,38 @@ namespace SchemaComparison.Core
 </head>
 <body>
     <div class='header'>
-        <h1>Reporte de Análisis de Esquema de Base de Datos</h1>
+        <h1>Reporte de Análisis de Base de Datos</h1>
         <p>Generado el: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + @"</p>
     </div>
 
-    <div class='section'>
-        <h2 class='section-title'>Reporte General</h2>
+    <div class='toc'>
+        <h2 class='toc-title'>Índice del Contenido</h2>
+        <ul>
+            <li><a href='#general'>1. Reporte General de Esquema</a></li>
+            <li><a href='#detailed'>2. Reporte Detallado de Esquema</a></li>
+            <li><a href='#indexes'>3. Reporte de Índices</a></li>
+        </ul>
+    </div>
+
+    <div id='general' class='section'>
+        <h2 class='section-title'>1. Reporte General de Esquema</h2>
         <pre>" + _basicReport.Replace("✅", "<span class='check'>✅</span>")
                            .Replace("❌", "<span class='cross'>❌</span>")
                            .Replace("⚠️", "<span class='warning'>⚠️</span>") + @"</pre>
     </div>
 
-    <div class='section'>
-        <h2 class='section-title'>Reporte Detallado</h2>
+    <div id='detailed' class='section'>
+        <h2 class='section-title'>2. Reporte Detallado de Esquema</h2>
         <pre>" + _detailedReport.Replace("✅", "<span class='check'>✅</span>")
                                .Replace("❌", "<span class='cross'>❌</span>")
                                .Replace("⚠️", "<span class='warning'>⚠️</span>") + @"</pre>
+    </div>
+
+    <div id='indexes' class='section'>
+        <h2 class='section-title'>3. Reporte de Índices</h2>
+        <pre>" + _indexReport.Replace("✅", "<span class='check'>✅</span>")
+                            .Replace("❌", "<span class='cross'>❌</span>")
+                            .Replace("⚠️", "<span class='warning'>⚠️</span>") + @"</pre>
     </div>
 </body>
 </html>");

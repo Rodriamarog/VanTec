@@ -1,0 +1,1502 @@
+=== REPORTE DE COMPARACIÓN DE ÍNDICES ===
+
+Total de índices en la base de datos: 2581
+Total de índices en el código: 2548
+
+1. ÍNDICES QUE EXISTEN EN BD PERO NO EN CÓDIGO:
+
+Tabla: VT_AvisoRCartaPorte
+Índice: KARCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_AvisoRCartaPorte
+Índice: KPARCartaPorteAvisoR
+Único: No
+Columnas:
+  - AvisoRemesa
+
+Tabla: VT_AvisosTraslado
+Índice: KAVTAnioATFolioEmpT
+Único: Sí
+Columnas:
+  - AnioAT
+  - Folio
+  - EmpresaTransfiere
+
+Tabla: VT_AvisosTraslado
+Índice: KAVTPatAdAnioATFolio
+Único: No
+Columnas:
+  - Patente
+  - Aduana
+  - AnioAT
+  - Folio
+
+Tabla: VT_BTCartaPorte
+Índice: KBTCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_BTCartaPorte
+Índice: KPBTCartaPorteTra
+Único: No
+Columnas:
+  - Trafico
+
+Tabla: VT_ConfProveXEmpresa
+Índice: KConfProveXEmpresaID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_ConfProveXEmpresa
+Índice: KEmpresaPDProveedor
+Único: Sí
+Columnas:
+  - Empresa
+  - PD
+  - Proveedor
+
+Tabla: VT_ConsultaQRSAT
+Índice: KConsultaQRSATID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_ConsultaQRSAT
+Índice: KCQRSATPASNTDocumen
+Único: No
+Columnas:
+  - Patente
+  - Aduana
+  - Tipo
+  - Documento
+  - NumeroDeOrden
+
+Tabla: VT_CuentasBancoProve
+Índice: KCuentasBancoProveID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_CuentasBancoProve
+Índice: KProvBancoCuenta
+Único: Sí
+Columnas:
+  - Proveedor
+  - Banco
+  - Cuenta
+
+Tabla: VT_CuentasBancoProve
+Índice: KProvDesactivada
+Único: No
+Columnas:
+  - Proveedor
+  - Desactivada
+
+Tabla: VT_DocumentosWServer
+Índice: KDWSPASTDocumento
+Único: No
+Columnas:
+  - Patente
+  - Aduana
+  - Tipo
+  - Documento
+
+Tabla: VT_DTA
+Índice: KFechaTipo
+Único: Sí
+Columnas:
+  - Fecha
+  - Tipo
+
+Tabla: VT_EmbaCartaPorte
+Índice: KEmbaCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_EmbaCartaPorte
+Índice: KPECartaPorteEmba
+Único: No
+Columnas:
+  - Embarque
+
+Tabla: VT_INPC
+Índice: KFecha
+Único: Sí
+Columnas:
+  - Fecha
+
+Tabla: VT_Mapeos
+Índice: KMapeosDrive
+Único: Sí
+Columnas:
+  - Drive
+
+Tabla: VT_Multas
+Índice: KFechaTipo
+Único: Sí
+Columnas:
+  - Fecha
+  - Tipo
+
+Tabla: VT_PedCartaPorte
+Índice: KPCartaPortePed
+Único: No
+Columnas:
+  - Pedimento
+
+Tabla: VT_PedCartaPorte
+Índice: KPedCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_PedimentoConfig
+Índice: KPedimentoConfigID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_PedimentoConfig
+Índice: KPPediConfigPedi
+Único: No
+Columnas:
+  - Pedimento
+
+Tabla: VT_Prevalid
+Índice: KFechaTipo
+Único: Sí
+Columnas:
+  - Fecha
+  - Tipo
+
+Tabla: VT_RAereaCartaPorte
+Índice: KPRACartaPorteRemA
+Único: No
+Columnas:
+  - RemAerea
+
+Tabla: VT_RAereaCartaPorte
+Índice: KRAereaCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_RDocumentos
+Índice: KRDPASTDocEntregado
+Único: No
+Columnas:
+  - Patente
+  - Aduana
+  - TipoDocumento
+  - Entregado
+
+Tabla: VT_RemesaCartaPorte
+Índice: KPRCartaPorteRem
+Único: No
+Columnas:
+  - Remesa
+
+Tabla: VT_RemesaCartaPorte
+Índice: KRemesaCartaPorteID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_Tasa
+Índice: KFecha
+Único: Sí
+Columnas:
+  - Fecha
+
+Tabla: VT_TipoDeCambio
+Índice: KFecha
+Único: Sí
+Columnas:
+  - Fecha
+
+Tabla: VT_XMLRelaCove
+Índice: KXMLRelaCoveID
+Único: No
+Columnas:
+  - ID
+
+Tabla: VT_XMLRelaCove
+Índice: KXMLReleDocument
+Único: No
+Columnas:
+  - eDocument
+
+Tabla: VT_XMLRelaCove
+Índice: KXMLRelTipoDoc
+Único: No
+Columnas:
+  - Tipo
+  - Documento
+
+2. ÍNDICES QUE EXISTEN EN CÓDIGO PERO NO EN BD:
+
+Tabla: VT_AvisosTraslado
+Índice: KAVTFolioEmpresaT
+Único: No
+Columnas:
+  - Folio
+  - EmpresaTransfiere
+Definición en código:
+  entity.HasIndex(e => new { e.Folio, e.EmpresaTransfiere }, "KAVTFolioEmpresaT")
+
+Tabla: VT_AvisosTraslado
+Índice: KAVTPatenteAduanaF
+Único: No
+Columnas:
+  - Patente
+  - Aduana
+  - Folio
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Folio }, "KAVTPatenteAduanaF").HasFillFactor(80);
+
+3. ÍNDICES CON DIFERENCIAS EN LA CONFIGURACIÓN:
+
+Tabla: VT_AcumulaConcepto
+Índice: KFacturaConcepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Factura, e.Concepto }, "KFacturaConcepto")
+
+Tabla: VT_BAAA
+Índice: KOficinaAAA
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.AAA }, "KOficinaAAA")
+
+Tabla: VT_Bancos
+Índice: KNumeroDeBanco
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Banco, "KNumeroDeBanco")
+
+Tabla: VT_BBodega
+Índice: KOficinaBodega
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Bodega }, "KOficinaBodega")
+
+Tabla: VT_BBultos
+Índice: KOBulto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Bulto }, "KOBulto")
+
+Tabla: VT_BChoferes
+Índice: KOChofer
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Chofer }, "KOChofer")
+
+Tabla: VT_BCobros
+Índice: KOCobro
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Cobro }, "KOCobro")
+
+Tabla: VT_BConceptos
+Índice: KClienteCobro
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Cliente, e.Cobro }, "KClienteCobro")
+
+Tabla: VT_BConceptos
+Índice: KOConceptoCobro
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.ID, e.Cobro }, "KOConceptoCobro")
+
+Tabla: VT_BContacto
+Índice: KOContacto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Contacto }, "KOContacto")
+
+Tabla: VT_BCorresponsal
+Índice: KOCorresponsal
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Corresponsal }, "KOCorresponsal")
+
+Tabla: VT_BCUMFUMC
+Índice: KUMFUMC
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.UMF, e.UMC }, "KUMFUMC")
+
+Tabla: VT_BDestinos
+Índice: KODestino
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Destino }, "KODestino")
+
+Tabla: VT_BEmbarques
+Índice: KBEmSNoEmbarque
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.NoEmbarque }, "KBEmSNoEmbarque")
+
+Tabla: VT_BEntrada
+Índice: KBEnSNoEntrada
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.NoEntrada }, "KBEnSNoEntrada")
+
+Tabla: VT_BEntradaGastos
+Índice: KBEntradaGastosCON
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Entrada, e.Concepto }, "KBEntradaGastosCON")
+
+Tabla: VT_BEventos
+Índice: KOModuloEvento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Modulo, e.Evento }, "KOModuloEvento")
+
+Tabla: VT_BFacturaGastos
+Índice: KBFGOSFacNumerica
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.FacturaNumerica }, "KBFGOSFacNumerica")
+
+Tabla: VT_BFacturaGastos
+Índice: KBFGSNoFacturacion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.NoFacturacion }, "KBFGSNoFacturacion")
+
+Tabla: VT_BFDetalle
+Índice: KOFacturaID
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Factura, e.ID }, "KOFacturaID")
+
+Tabla: VT_BFormaRecep
+Índice: KOFormaRecepcion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.FormaRecepcion }, "KOFormaRecepcion")
+
+Tabla: VT_BForwarding
+Índice: KOForwarding
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Forwarding }, "KOForwarding")
+
+Tabla: VT_BGposEventos
+Índice: KOModuloGpoEvento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Modulo, e.Grupo, e.Evento }, "KOModuloGpoEvento")
+
+Tabla: VT_BGrupos
+Índice: KOModuloGrupo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Modulo, e.Grupo }, "KOModuloGrupo")
+
+Tabla: VT_BLineaTransportis
+Índice: KOLineaTransportista
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.LineaTransportista }, "KOLineaTransportista")
+
+Tabla: VT_BLock
+Índice: KBLockNoDocumento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.Modulo, e.NoDocumento }, "KBLockNoDocumento")
+
+Tabla: VT_BMercancias
+Índice: KOMercancia
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Mercancia }, "KOMercancia")
+
+Tabla: VT_BNotas
+Índice: KBNONota
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Nota }, "KBNONota")
+
+Tabla: VT_BNumeroEmbarque
+Índice: KBNEmSNoEmbarque
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.NoEmbarque }, "KBNEmSNoEmbarque")
+
+Tabla: VT_BNumeroEntrada
+Índice: KBNEnSNoEntrada
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.NoEntrada }, "KBNEnSNoEntrada")
+
+Tabla: VT_BNumeroFactura
+Índice: KBNFaNoFacturacion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.NoFacturacion }, "KBNFaNoFacturacion")
+
+Tabla: VT_BNumeroOrdenCarga
+Índice: KBNOCNoOrdenDeCarga
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.NoOrdenDeCarga }, "KBNOCNoOrdenDeCarga")
+
+Tabla: VT_BNumeroTrafico
+Índice: KBNTrNoTrafico
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Sucursal, e.NoTrafico }, "KBNTrNoTrafico")
+
+Tabla: VT_BodegaAT
+Índice: KBATBodega
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Bodega, "KBATBodega")
+
+Tabla: VT_BOrdenDeCarga
+Índice: KSOCNoOrdenDeCarga
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.NoOrdenDeCarga }, "KSOCNoOrdenDeCarga")
+
+Tabla: VT_BOrigenes
+Índice: KOODD
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.ODD }, "KOODD")
+
+Tabla: VT_BREventoSuceso
+Índice: KModuloSucesoEvento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Modulo, e.Suceso, e.Evento }, "KModuloSucesoEvento")
+
+Tabla: VT_BServicioLinea
+Índice: KOServicio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Servicio }, "KOServicio")
+
+Tabla: VT_BSituaciones
+Índice: KBSituacionSituacion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Situacion, "KBSituacionSituacion")
+
+Tabla: VT_BSucesos
+Índice: KOSuceso
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Suceso }, "KOSuceso")
+
+Tabla: VT_BSucursalConf
+Índice: KBSucConfBSucursal
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.BSucursal, "KBSucConfBSucursal")
+
+Tabla: VT_BSucursales
+Índice: KOficinaSucursal
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal }, "KOficinaSucursal")
+
+Tabla: VT_BTiempos
+Índice: KOTiempo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Tiempo }, "KOTiempo")
+
+Tabla: VT_BTipoVehiculos
+Índice: KOTipoVehiculo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.TipoVehiculo }, "KOTipoVehiculo")
+
+Tabla: VT_BTrafico
+Índice: KBTrSNoTrafico
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Sucursal, e.NoTrafico }, "KBTrSNoTrafico")
+
+Tabla: VT_BVistas
+Índice: KOVista
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Vista }, "KOVista")
+
+Tabla: VT_CalculoHonorarios
+Índice: KFacturaPedimentCpto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Factura, e.Pedimento, e.Concepto }, "KFacturaPedimentCpto")
+
+Tabla: VT_CambioEstructuras
+Índice: KCEFolio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Folio, "KCEFolio")
+
+Tabla: VT_CambioFactura
+Índice: KEPDFechaCF
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Fecha }, "KEPDFechaCF")
+
+Tabla: VT_CatalogoTransSema
+Índice: KCTSOficinaClave
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Clave }, "KCTSOficinaClave")
+
+Tabla: VT_CertificadosFE
+Índice: KEPDNoCertificado
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.NoCertificado }, "KEPDNoCertificado")
+
+Tabla: VT_CierreDeMes
+Índice: KEPDMesAno
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Mes, e.Ano }, "KEPDMesAno")
+
+Tabla: VT_CierrePorDia
+Índice: KEPDDia
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Dia }, "KEPDDia")
+
+Tabla: VT_ClaveNoCobroImpue
+Índice: KEPDCteTipoRegiClave
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.Tipo, e.Regimen, e.Clave }, "KEPDCteTipoRegiClave")
+
+Tabla: VT_Clientes
+Índice: KOficinaNumero
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Numero }, "KOficinaNumero")
+
+Tabla: VT_ClientesAFacturar
+Índice: KEPDCteImpExpCteFact
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.ClienteImpExp, e.ClienteFactura }, "KEPDCteImpExpCteFact")
+
+Tabla: VT_ClientesTipoDocto
+Índice: KClientesTipoDoctoCT
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Cliente, e.TipoDocumento }, "KClientesTipoDoctoCT")
+
+Tabla: VT_ClientesXDeptos
+Índice: KClientesXDeptos
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Cliente, e.Departamento }, "KClientesXDeptos")
+
+Tabla: VT_Cobradores
+Índice: KEPDClave
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Clave }, "KEPDClave")
+
+Tabla: VT_CodiReme
+Índice: KPatenteAduanaCR
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana }, "KPatenteAduanaCR")
+
+Tabla: VT_Concepto
+Índice: KEPDGrupoCodigo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.GrupoConcepto, e.Codigo }, "KEPDGrupoCodigo")
+
+Tabla: VT_ConceptoPorClient
+Índice: KEPDCteConceptoCC
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.Concepto }, "KEPDCteConceptoCC")
+
+Tabla: VT_ConceptoPorPedime
+Índice: KEPDPatAdPedConcepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+  - Columnas en BD: Empresa, PD, Patente, AduanaSeccion, AnioPedimento, Pedimento, Concepto
+  - Columnas en Código: Empresa, PD, Patente, AduanaSeccion, Pedimento, Concepto
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Patente, e.AduanaSeccion, e.Pedimento, e.Concepto }, "KEPDPatAdPedConcepto")
+
+Tabla: VT_ConceptoPorRefere
+Índice: KEPDRefereConcepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Referencia, e.Concepto }, "KEPDRefereConcepto")
+
+Tabla: VT_ConceptoTipoDocto
+Índice: KTipoDeDocumentoCpto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.TipoDeDocumento, e.Concepto }, "KTipoDeDocumentoCpto")
+
+Tabla: VT_ConfiguracionGral
+Índice: KEmpresaPD
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD }, "KEmpresaPD")
+
+Tabla: VT_ConRecibosPorDepo
+Índice: KDoctotalConReci
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Doctotal, e.ContraRecibo }, "KDoctotalConReci")
+
+Tabla: VT_ConsecutivoCobran
+Índice: KEPDContraReciboCC
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.ContraRecibo }, "KEPDContraReciboCC")
+
+Tabla: VT_ConsecutivosVal
+Índice: KPatAduTipoCons
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Tipo, e.Consecutivo }, "KPatAduTipoCons")
+
+Tabla: VT_ContHortaliza
+Índice: KNumeroCont
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Numero }, "KNumeroCont")
+
+Tabla: VT_ContraRecibos
+Índice: KEPDCteContReci
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.ContraRecibo }, "KEPDCteContReci")
+
+Tabla: VT_ContribPEMonto
+Índice: KCPEMContrib
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Contribucion, "KCPEMContrib")
+
+Tabla: VT_CtaContables
+Índice: KEPDClienteCC
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente }, "KEPDClienteCC")
+
+Tabla: VT_CtaContaNiveDepto
+Índice: KEPDSerieDeptoDepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.SerieDepto, e.Departamento }, "KEPDSerieDeptoDepto")
+
+Tabla: VT_CtaContaXConcepto
+Índice: KCptoCtaConNiveDepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Concepto, e.CtaContaNiveDepto }, "KCptoCtaConNiveDepto")
+
+Tabla: VT_CtaContXSerieYCte
+Índice: KCtaContableSerie
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.CtaContables, e.Serie }, "KCtaContableSerie")
+
+Tabla: VT_CteDefProveedor
+Índice: KCDPCtePrv
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Cliente, e.Proveedor }, "KCDPCtePrv")
+
+Tabla: VT_CURPS
+Índice: KCurps
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Curp, "KCurps")
+
+Tabla: VT_Departamentos
+Índice: KDepartamentos
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Departamento }, "KDepartamentos")
+
+Tabla: VT_Destinatario
+Índice: KNumeroDestinatario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Numero }, "KNumeroDestinatario")
+
+Tabla: VT_DetaEfectivoDlls
+Índice: KEPDEfectDllsDenomi
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.EfectivoDolares, e.Denominacion }, "KEPDEfectDllsDenomi")
+
+Tabla: VT_DetaEfectivoPesos
+Índice: KEPDEfectPesosDenomi
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.EfectivoPesos, e.Denominacion }, "KEPDEfectPesosDenomi")
+
+Tabla: VT_DetaLimiCredCpto
+Índice: KEPDLimiCredCptoCpto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.LimiteCreditoCpto, e.Concepto }, "KEPDLimiCredCptoCpto")
+
+Tabla: VT_DetalleDelReporte
+Índice: KReporteConcepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.ReporteID, e.Concepto }, "KReporteConcepto")
+
+Tabla: VT_DetalleFactura
+Índice: KFactPedimentoStatus
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Factura, e.Pedimento, e.Status }, "KFactPedimentoStatus")
+
+Tabla: VT_DetallePedimento
+Índice: KDetFactConc
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.DetalleFactura, e.Concepto }, "KDetFactConc")
+
+Tabla: VT_DireccionDeCorreo
+Índice: KEPDClienteDirecCorr
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.DireccionDeCorreo }, "KEPDClienteDirecCorr")
+
+Tabla: VT_DirecCorreInterno
+Índice: KEPDDireccionDeCorre
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.DireccionDeCorreo }, "KEPDDireccionDeCorre")
+
+Tabla: VT_eDespachoDetalle
+Índice: KeDespachoTipodocID
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Tipo, e.documentoID }, "KeDespachoTipodocID")
+
+Tabla: VT_eDespBLSNESellos
+Índice: KeDespBLSNESellosU
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.eDespBLSNumEquipo, e.sello }, "KeDespBLSNESellosU")
+
+Tabla: VT_eDespBLSNumEquipo
+Índice: KeDespBLSNumEquipoU
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.eDespachoBLS, e.inicialesNumEquipo }, "KeDespBLSNumEquipoU")
+
+Tabla: VT_EDTipoDocumento
+Índice: KEDTDTipoDocumento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.TipoDocumento, "KEDTDTipoDocumento")
+
+Tabla: VT_EfectivoDolares
+Índice: KEPDSerieFecha1
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Serie, e.Fecha }, "KEPDSerieFecha1")
+
+Tabla: VT_EfectivoPesos
+Índice: KEPDSerieFecha2
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Serie, e.Fecha }, "KEPDSerieFecha2")
+
+Tabla: VT_EjecutivoDeVentas
+Índice: KEPDClaveEjecutivo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Clave }, "KEPDClaveEjecutivo")
+
+Tabla: VT_Empresas
+Índice: KEmpresa
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Empresa, "KEmpresa")
+
+Tabla: VT_EmpresasRFC
+Índice: KEmpresasRFCRFC
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.RFC, "KEmpresasRFCRFC")
+
+Tabla: VT_EncabezaDelReport
+Índice: KEPDReporte
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Reporte }, "KEPDReporte")
+
+Tabla: VT_EncaRemeFact
+Índice: KEPDClienteFactura
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.Factura }, "KEPDClienteFactura")
+
+Tabla: VT_ERFCDetalle
+Índice: KERFCDECPA
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.EmpresaRFC, e.Cliente, e.Patente, e.Aduana }, "KERFCDECPA")
+
+Tabla: VT_FacturaP
+Índice: KVT_FacturaP
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Factura, "KVT_FacturaP")
+
+Tabla: VT_FoliosComplePago
+Índice: KEPDFolioSerieComPag
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Folio, e.Serie }, "KEPDFolioSerieComPag")
+
+Tabla: VT_FoliosDeCobranza
+Índice: KEPDTipoFolioFolio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.TiposDeFolios, e.Folio }, "KEPDTipoFolioFolio")
+
+Tabla: VT_FoliosDeDepositos
+Índice: KEPDSerieFolioReci
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Serie, e.FolioDeRecibo }, "KEPDSerieFolioReci")
+
+Tabla: VT_FoliosFact
+Índice: KEPDPSerieFolio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Proforma, e.Folio, e.Serie }, "KEPDPSerieFolio")
+
+Tabla: VT_FoliosNotaCredito
+Índice: KEPDFolioSerie
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Folio, e.Serie }, "KEPDFolioSerie")
+
+Tabla: VT_FraccionesProhibi
+Índice: KFProhTipoFraccionPO
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Tipo, e.Fraccion, e.PaisOrigen }, "KFProhTipoFraccionPO")
+
+Tabla: VT_GrupoConcepto
+Índice: KEPDGrupo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Grupo }, "KEPDGrupo")
+
+Tabla: VT_ImpuesCobraAparte
+Índice: KEPDClienteCocepto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.Concepto }, "KEPDClienteCocepto")
+
+Tabla: VT_Inspectores
+Índice: KInspecInspector
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Inspector }, "KInspecInspector")
+
+Tabla: VT_LimiteCreditoCpto
+Índice: KEPDCteDescripcion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Cliente, e.Descripcion }, "KEPDCteDescripcion")
+
+Tabla: VT_LineasNavieras
+Índice: KLNOLineaNaviera
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.LineaNaviera }, "KLNOLineaNaviera")
+
+Tabla: VT_Lock
+Índice: KLockPedimento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Pedimento }, "KLockPedimento")
+
+Tabla: VT_LockGeneral
+Índice: KLockGModIDDocu
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Modulo, e.IDDocumento }, "KLockGModIDDocu")
+
+Tabla: VT_LugarExpedicion
+Índice: KEPDLugarExpedicion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.LugarDeExpedicion }, "KEPDLugarExpedicion")
+
+Tabla: VT_MercanciaLegumbre
+Índice: KNumeroMcia
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Numero }, "KNumeroMcia")
+
+Tabla: VT_MetodoDePago
+Índice: KEPDMetodoDePago
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.MetodoDePago }, "KEPDMetodoDePago")
+
+Tabla: VT_Modulos
+Índice: KPatenteAduana
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana }, "KPatenteAduana")
+
+Tabla: VT_NoIdentifConcepto
+Índice: KConceptoClienteNICo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Concepto, e.Cliente }, "KConceptoClienteNICo")
+
+Tabla: VT_NOPedimento
+Índice: KPatAduNumeroNOP
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.NumeroNOP }, "KPatAduNumeroNOP")
+
+Tabla: VT_NotaContraRecibo
+Índice: KEPDContraRecibo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.ContraRecibo }, "KEPDContraRecibo")
+
+Tabla: VT_NumeroCuentaPago
+Índice: KCtaContaNumCtaPago
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.CtaContables, e.NumeroCuentaPago }, "KCtaContaNumCtaPago")
+
+Tabla: VT_NumerosAT
+Índice: KPatenteAduanaFolio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Folio }, "KPatenteAduanaFolio")
+
+Tabla: VT_NumerosATCliente
+Índice: KClienteNumero
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Cliente, e.NumeroAT }, "KClienteNumero")
+
+Tabla: VT_NumerosATCliente
+Índice: KNumeroCliente
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.NumeroAT, e.Cliente }, "KNumeroCliente")
+
+Tabla: VT_NumerosBodXEmp
+Índice: KNBXEPatenteAduanaF
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Folio }, "KNBXEPatenteAduanaF")
+
+Tabla: VT_NumerosCliente
+Índice: KNCPAduanaCteNume
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Cliente, e.Anio, e.Numero }, "KNCPAduanaCteNume")
+
+Tabla: VT_NumerosDODAQR
+Índice: KPatAduanaNuDODAQR
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatAduanaNuDODAQR")
+
+Tabla: VT_NumerosEncargosCF
+Índice: KPatenteAduanaNumero
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatenteAduanaNumero")
+
+Tabla: VT_NumerosLECE
+Índice: KNLECEPatAduAnioNum
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Anio, e.Numero }, "KNLECEPatAduAnioNum")
+
+Tabla: VT_NumerosNOP
+Índice: KPatAduNumNP
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatAduNumNP")
+
+Tabla: VT_NumerosPedi
+Índice: KPatenteAduanaNum
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Anio, e.Numero }, "KPatenteAduanaNum")
+
+Tabla: VT_NumerosProforma
+Índice: KPatenteAduanaNumPro
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatenteAduanaNumPro")
+
+Tabla: VT_NumerosReferencia
+Índice: KPatenteAduanaRefer
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Referencia }, "KPatenteAduanaRefer")
+
+Tabla: VT_NumerosRelaDocu
+Índice: KPatAduanaNuRelaDocu
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatAduanaNuRelaDocu")
+
+Tabla: VT_NumerosRUT
+Índice: KRutPatAduanaNum
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KRutPatAduanaNum")
+
+Tabla: VT_NumerosSaga
+Índice: KPatenteAduanaOper
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Operacion }, "KPatenteAduanaOper")
+
+Tabla: VT_NumerosSema
+Índice: KPatAduanaNumSema
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatAduanaNumSema")
+
+Tabla: VT_NumerosSemaAuto
+Índice: KPatAduanaNuSemaAuto
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Numero }, "KPatAduanaNuSemaAuto")
+
+Tabla: VT_PalabrasPrev
+Índice: KPPrevOficinaPalabra
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Palabra }, "KPPrevOficinaPalabra")
+
+Tabla: VT_PatAduNoCobroImpu
+Índice: KCtaConPatAduSec
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.CtaContables, e.Patente, e.AduanaSeccion }, "KCtaConPatAduSec")
+
+Tabla: VT_PCamposPar
+Índice: KPCPCampo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Campo, "KPCPCampo")
+
+Tabla: VT_PCamposPed
+Índice: KCampo
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Campo, "KCampo")
+
+Tabla: VT_PClavesPedimento
+Índice: KPCPClaveRegTipoClasif
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Clave, e.Tipo, e.Regimen, e.ClasificacionTemp }, "KPCPClaveRegTipoClasif")
+
+Tabla: VT_Pedimentos
+Índice: KPedimento
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana, e.Proforma, e.AnioPedimento, e.Pedimento }, "KPedimento")
+
+Tabla: VT_PediSinFacturar
+Índice: KEPDPPatADAnioPedPSF
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Proforma, e.Patente, e.Aduana, e.AnioPedimento, e.Pedimento }, "KEPDPPatADAnioPedPSF")
+
+Tabla: VT_PFormatos
+Índice: KPFUsuarioNombre
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Usuario, e.Nombre }, "KPFUsuarioNombre")
+
+Tabla: VT_Productor
+Índice: KOficinaClaveProd
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Clave }, "KOficinaClaveProd")
+
+Tabla: VT_Proveedores
+Índice: KOficinaClave
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Clave }, "KOficinaClave")
+
+Tabla: VT_RDestinatarioAR
+Índice: KRDARARDestinatario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.AvisoRemesa, e.Destinatario }, "KRDARARDestinatario")
+
+Tabla: VT_RDestinatarioRA
+Índice: KRDRARADestinatario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.RemAerea, e.Destinatario }, "KRDRARADestinatario")
+
+Tabla: VT_RDestinatarioRF
+Índice: KRDRFRFDestinatario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.RelacionFacturas, e.Destinatario }, "KRDRFRFDestinatario")
+
+Tabla: VT_RDestinatarioRM
+Índice: KRDRMRMDestinatario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Remesa, e.Destinatario }, "KRDRMRMDestinatario")
+
+Tabla: VT_RefePagoBancarias
+Índice: KCtaContaRefCtaBanco
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.CtaContables, e.Banco, e.Cuenta, e.Referencia }, "KCtaContaRefCtaBanco")
+
+Tabla: VT_RegimenFactura
+Índice: KEPDRegimen
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Regimen }, "KEPDRegimen")
+
+Tabla: VT_Represen
+Índice: KClaveRfcNombre
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Cliente, e.Rfc, e.NombreDelRep }, "KClaveRfcNombre")
+
+Tabla: VT_RFCProhibido
+Índice: KOficinaRfc
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Rfc }, "KOficinaRfc")
+
+Tabla: VT_RPASBancos
+Índice: KRPASBcoPatAdu
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Banco, e.Patente, e.Aduana }, "KRPASBcoPatAdu")
+
+Tabla: VT_RUMAbreviacion
+Índice: KRUMAbUMAbreviacion
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.UM, e.Abreviacion }, "KRUMAbUMAbreviacion")
+
+Tabla: VT_SagarIni
+Índice: KPatAdu
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana }, "KPatAdu")
+
+Tabla: VT_SecuenciaDePago
+Índice: KEPDConceptoSP
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Concepto }, "KEPDConceptoSP")
+
+Tabla: VT_SMTPUsers
+Índice: KSMTPUsuario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Usuario, "KSMTPUsuario")
+
+Tabla: VT_TCParaDepositos
+Índice: KEPDFecha
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Fecha }, "KEPDFecha")
+
+Tabla: VT_TipoDeCliente
+Índice: KEPDDescrTipoCliente
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.DescripTipoDeCliente }, "KEPDDescrTipoCliente")
+
+Tabla: VT_TipoDeDocumento
+Índice: KEPDClave1
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Clave }, "KEPDClave1")
+
+Tabla: VT_TipoDocumentoCTE
+Índice: KTipoDocumentoCTEOTD
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.TipoDocumento }, "KTipoDocumentoCTEOTD")
+
+Tabla: VT_TiposDeFolios
+Índice: KEPDClaveTiposFolio
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Clave }, "KEPDClaveTiposFolio")
+
+Tabla: VT_TiposDeMercancias
+Índice: KEPDClaveTM
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Clave }, "KEPDClaveTM")
+
+Tabla: VT_TraficoINI
+Índice: KPatenteAduanaT
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Patente, e.Aduana }, "KPatenteAduanaT")
+
+Tabla: VT_TransporTransitos
+Índice: KTTOficinaClave
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Clave }, "KTTOficinaClave")
+
+Tabla: VT_UnidadMedidaFact
+Índice: KEPDUnidadDeMedida
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.UnidadDeMedida }, "KEPDUnidadDeMedida")
+
+Tabla: VT_Usuario
+Índice: KUsuario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Usuario, "KUsuario")
+
+Tabla: VT_Usuarios
+Índice: KNombreDelUsuario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => e.Usuario, "KNombreDelUsuario")
+
+Tabla: VT_UsuariosXDeptos
+Índice: KUsuariosXDeptos
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Usuario, e.Departamento }, "KUsuariosXDeptos")
+
+Tabla: VT_ValesDeCaja
+Índice: KEPDSerieFecha
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Empresa, e.PD, e.Serie, e.Fecha }, "KEPDSerieFecha")
+
+Tabla: VT_Veterinario
+Índice: KVetVeterinario
+Diferencias encontradas:
+  - Propiedad Unique: BD=True, Código=False
+Definición en código:
+  entity.HasIndex(e => new { e.Oficina, e.Veterinario }, "KVetVeterinario")
+
+RESUMEN:
+Total de índices solo en BD: 35
+Total de índices solo en código: 2
+Total de índices con diferencias: 176

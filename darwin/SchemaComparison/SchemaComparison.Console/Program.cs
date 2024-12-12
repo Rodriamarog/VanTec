@@ -30,51 +30,53 @@ class Program
             string reportsFolderPath = Path.Combine(projectPath, "Reportes");
             Directory.CreateDirectory(reportsFolderPath);
             
+            // Generar timestamp para los archivos
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
             // Run SchemaComparisonTool
+            Console.WriteLine("\n=== Ejecutando Comparación de Esquemas ===");
             var comparisonTool = new SchemaComparisonTool(connectionString, entityFilesPath);
             var result = comparisonTool.CompareSchemas();
-            
             string report = comparisonTool.GenerateReport(result);
             Console.WriteLine(report);
 
-            // Guardar reporte en la carpeta Reportes
-            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string fileName = Path.Combine(reportsFolderPath, $"ReporteComparacion_{timestamp}.txt");
-            File.WriteAllText(fileName, report);
-            
-            Console.WriteLine($"\nReporte guardado en: {fileName}");
-            
-            // Mostrar un mensaje más amigable de la ubicación del reporte
-            string relativePath = Path.Combine("SchemaComparison.Console", "Reportes",
-                                             $"ReporteComparacion_{timestamp}.txt");
-            Console.WriteLine($"Reporte guardado en la carpeta del proyecto: {relativePath}");
+            // Guardar reporte de esquemas
+            string schemaFileName = Path.Combine(reportsFolderPath, $"ReporteComparacion_{timestamp}.txt");
+            File.WriteAllText(schemaFileName, report);
             
             // Run DetailedSchemaAnalyzer
+            Console.WriteLine("\n=== Ejecutando Análisis Detallado de Esquemas ===");
             var analyzer = new DetailedSchemaAnalyzer(entityFilesPath, connectionString);
             string analyzerReport = await analyzer.GenerateDetailedReportAsync();
             Console.WriteLine(analyzerReport);
             
-            // Guardar reporte detallado en la carpeta Reportes
+            // Guardar reporte detallado
             string analyzerFileName = Path.Combine(reportsFolderPath, $"ReporteDarwinContext_{timestamp}.txt");
             File.WriteAllText(analyzerFileName, analyzerReport);
-            
-            Console.WriteLine($"\nReporte detallado guardado en: {analyzerFileName}");
-            
-            // Mostrar un mensaje más amigable de la ubicación del reporte detallado
-            string analyzerRelativePath = Path.Combine("SchemaComparison.Console", "Reportes",
-                                             $"ReporteDarwinContext_{timestamp}.txt");
-            Console.WriteLine($"Reporte detallado guardado en la carpeta del proyecto: {analyzerRelativePath}");
 
-            // Generar reporte PDF combinado
+            // Run IndexComparisonTool
+            Console.WriteLine("\n=== Ejecutando Comparación de Índices ===");
+            var indexTool = new IndexComparisonTool(connectionString, entityFilesPath);
+            string indexReport = await indexTool.GenerateReportAsync();
+            Console.WriteLine(indexReport);
+
+            // Guardar reporte de índices
+            string indexFileName = Path.Combine(reportsFolderPath, $"ReporteIndices_{timestamp}.txt");
+            File.WriteAllText(indexFileName, indexReport);
+
+            // Generar reporte PDF combinado con los tres reportes
             Console.WriteLine("\nGenerando reporte PDF combinado...");
             string pdfFileName = Path.Combine(reportsFolderPath, $"ReporteCompleto_{timestamp}.pdf");
-            var htmlGenerator = new HTMLReportGenerator(report, analyzerReport);
+            var htmlGenerator = new HTMLReportGenerator(report, analyzerReport, indexReport); // Asumiendo que modificaste HTMLReportGenerator
             await htmlGenerator.GeneratePDFAsync(pdfFileName);
 
-            Console.WriteLine($"Reporte PDF combinado generado en: {pdfFileName}");
-            string pdfRelativePath = Path.Combine("SchemaComparison.Console", "Reportes",
-                                             $"ReporteCompleto_{timestamp}.pdf");
-            Console.WriteLine($"Reporte PDF guardado en la carpeta del proyecto: {pdfRelativePath}");
+            // Mostrar ubicaciones de los archivos generados
+            Console.WriteLine("\nReportes generados:");
+            Console.WriteLine($"1. Reporte de Comparación: {Path.GetFileName(schemaFileName)}");
+            Console.WriteLine($"2. Reporte Detallado: {Path.GetFileName(analyzerFileName)}");
+            Console.WriteLine($"3. Reporte de Índices: {Path.GetFileName(indexFileName)}");
+            Console.WriteLine($"4. PDF Combinado: {Path.GetFileName(pdfFileName)}");
+            Console.WriteLine($"\nTodos los reportes se encuentran en: {reportsFolderPath}");
         }
         catch (Exception ex)
         {
