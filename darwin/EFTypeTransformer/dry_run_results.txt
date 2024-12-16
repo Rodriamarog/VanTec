@@ -1,0 +1,2961 @@
+
+File: VT_Adendas.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: horaResultado
+Original:
+public DateTime? horaResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? horaResultado { get; set; }
+#else
+    public TimeOnly? horaResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Automata.cs
+Changes to be made:
+
+Property: Intervalo
+Original:
+public DateTime? Intervalo { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Intervalo { get; set; }
+#else
+    public TimeOnly? Intervalo { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraInicio
+Original:
+public DateTime? HoraInicio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicio { get; set; }
+#else
+    public TimeOnly? HoraInicio { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFin
+Original:
+public DateTime? HoraFin { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFin { get; set; }
+#else
+    public TimeOnly? HoraFin { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFija
+Original:
+public DateTime? HoraFija { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFija { get; set; }
+#else
+    public TimeOnly? HoraFija { get; set; }
+#endif
+--------------------------------------------------
+
+Property: TimeLastReport
+Original:
+public DateTime? TimeLastReport { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? TimeLastReport { get; set; }
+#else
+    public TimeOnly? TimeLastReport { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AutorizaFacPed.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVC.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEmision
+Original:
+public DateTime? HoraEmision { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEmision { get; set; }
+#else
+    public TimeOnly? HoraEmision { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraVigencia
+Original:
+public DateTime? HoraVigencia { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraVigencia { get; set; }
+#else
+    public TimeOnly? HoraVigencia { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCCandados.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCCartaPorte.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCContenedores.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCDetalle.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCDetalleOtros.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCPediAmericano.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AVCTags.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoAR.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoAT.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoBodega.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoCC.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoCOVE.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRecibidoVU
+Original:
+public DateTime? HoraRecibidoVU { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRecibidoVU { get; set; }
+#else
+    public TimeOnly? HoraRecibidoVU { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoEnca.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoLECE.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoNP.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoPagos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoRemeDatExtra.cs
+Changes to be made:
+
+Property: HoraDeFactura
+Original:
+public DateTime? HoraDeFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeFactura { get; set; }
+#else
+    public TimeOnly? HoraDeFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeModulacion
+Original:
+public DateTime? HoraDeModulacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeModulacion { get; set; }
+#else
+    public TimeOnly? HoraDeModulacion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeEntrega
+Original:
+public DateTime? HoraDeEntrega { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeEntrega { get; set; }
+#else
+    public TimeOnly? HoraDeEntrega { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoRemesas.cs
+Changes to be made:
+
+Property: HoraImpresion
+Original:
+public DateTime? HoraImpresion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraImpresion { get; set; }
+#else
+    public TimeOnly? HoraImpresion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoRUT.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoSag.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoSemarnatAut.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisosFP.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_AvisoValidacion.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraResultado
+Original:
+public DateTime? HoraResultado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraResultado { get; set; }
+#else
+    public TimeOnly? HoraResultado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BBitacoraGARXM.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BBitaTrafico.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BBultosDetalle.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BClasificacion.cs
+Changes to be made:
+
+Property: HoraClasificacion
+Original:
+public DateTime? HoraClasificacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraClasificacion { get; set; }
+#else
+    public TimeOnly? HoraClasificacion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BCriterioGARXM.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosEmbar.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosEntra.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosFactu.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosGast.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosOC.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosPedim.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEExcedidosTrafi.cs
+Changes to be made:
+
+Property: HoraActualizaNormal
+Original:
+public DateTime? HoraActualizaNormal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraActualizaNormal { get; set; }
+#else
+    public TimeOnly? HoraActualizaNormal { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosEmbarque.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosEntradas.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosFacturas.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosGastos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosOC.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosPediment.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BDEventosTraficos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnQueSeExcedio
+Original:
+public DateTime? HoraEnQueSeExcedio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnQueSeExcedio { get; set; }
+#else
+    public TimeOnly? HoraEnQueSeExcedio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEDetalle.cs
+Changes to be made:
+
+Property: HoraSubdivision
+Original:
+public DateTime? HoraSubdivision { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraSubdivision { get; set; }
+#else
+    public TimeOnly? HoraSubdivision { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEDetaReubicacion.cs
+Changes to be made:
+
+Property: HoraMovimiento
+Original:
+public DateTime? HoraMovimiento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraMovimiento { get; set; }
+#else
+    public TimeOnly? HoraMovimiento { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEmbarques.cs
+Changes to be made:
+
+Property: HoraInicioDeEmbarque
+Original:
+public DateTime? HoraInicioDeEmbarque { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicioDeEmbarque { get; set; }
+#else
+    public TimeOnly? HoraInicioDeEmbarque { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFinalDeEmbarque
+Original:
+public DateTime? HoraFinalDeEmbarque { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFinalDeEmbarque { get; set; }
+#else
+    public TimeOnly? HoraFinalDeEmbarque { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEntrada.cs
+Changes to be made:
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraInbond
+Original:
+public DateTime? HoraInbond { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInbond { get; set; }
+#else
+    public TimeOnly? HoraInbond { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraSalida
+Original:
+public DateTime? HoraSalida { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraSalida { get; set; }
+#else
+    public TimeOnly? HoraSalida { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEntradaElec.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEntradaGastos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BEntradaInBond.cs
+Changes to be made:
+
+Property: HoraInBond
+Original:
+public DateTime? HoraInBond { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInBond { get; set; }
+#else
+    public TimeOnly? HoraInBond { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BFacturaGastos.cs
+Changes to be made:
+
+Property: HoraFactura
+Original:
+public DateTime? HoraFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFactura { get; set; }
+#else
+    public TimeOnly? HoraFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BFacturas.cs
+Changes to be made:
+
+Property: HoraFactura
+Original:
+public DateTime? HoraFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFactura { get; set; }
+#else
+    public TimeOnly? HoraFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRecepFactura
+Original:
+public DateTime? HoraRecepFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRecepFactura { get; set; }
+#else
+    public TimeOnly? HoraRecepFactura { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BFacturasFabrican.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BFotosEmbarques.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BFotosEntradas.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BGposEventos.cs
+Changes to be made:
+
+Property: HoraDelSistema
+Original:
+public DateTime? HoraDelSistema { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDelSistema { get; set; }
+#else
+    public TimeOnly? HoraDelSistema { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Bitacora.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BitaFace.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BitaMail.cs
+Changes to be made:
+
+Property: HoraEnvio
+Original:
+public DateTime? HoraEnvio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnvio { get; set; }
+#else
+    public TimeOnly? HoraEnvio { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BitaModi.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BLTEDetalle.cs
+Changes to be made:
+
+Property: HoraDeSalida
+Original:
+public DateTime? HoraDeSalida { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeSalida { get; set; }
+#else
+    public TimeOnly? HoraDeSalida { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraProgramadaEntga
+Original:
+public DateTime? HoraProgramadaEntga { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraProgramadaEntga { get; set; }
+#else
+    public TimeOnly? HoraProgramadaEntga { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetEmbarque.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetEntrada.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetFactGtos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetFactura.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetOC.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetPediment.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BNotasDetTrafico.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BOrdenDeCarga.cs
+Changes to be made:
+
+Property: HoraOrdenDeCarga
+Original:
+public DateTime? HoraOrdenDeCarga { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraOrdenDeCarga { get; set; }
+#else
+    public TimeOnly? HoraOrdenDeCarga { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BPesosDetalle.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BSituacionesDeta.cs
+Changes to be made:
+
+Property: HoraInicial
+Original:
+public DateTime? HoraInicial { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicial { get; set; }
+#else
+    public TimeOnly? HoraInicial { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFinal
+Original:
+public DateTime? HoraFinal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFinal { get; set; }
+#else
+    public TimeOnly? HoraFinal { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BSituacionesDetaE.cs
+Changes to be made:
+
+Property: HoraInicial
+Original:
+public DateTime? HoraInicial { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicial { get; set; }
+#else
+    public TimeOnly? HoraInicial { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFinal
+Original:
+public DateTime? HoraFinal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFinal { get; set; }
+#else
+    public TimeOnly? HoraFinal { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BTEDetalle.cs
+Changes to be made:
+
+Property: HoraDeSalida
+Original:
+public DateTime? HoraDeSalida { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeSalida { get; set; }
+#else
+    public TimeOnly? HoraDeSalida { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraProgramadaEntga
+Original:
+public DateTime? HoraProgramadaEntga { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraProgramadaEntga { get; set; }
+#else
+    public TimeOnly? HoraProgramadaEntga { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_BTrafico.cs
+Changes to be made:
+
+Property: HoraTrafico
+Original:
+public DateTime? HoraTrafico { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraTrafico { get; set; }
+#else
+    public TimeOnly? HoraTrafico { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEvento
+Original:
+public DateTime? HoraEvento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEvento { get; set; }
+#else
+    public TimeOnly? HoraEvento { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_CambioEstructuras.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: TiempoActualizacion
+Original:
+public DateTime? TiempoActualizacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? TiempoActualizacion { get; set; }
+#else
+    public TimeOnly? TiempoActualizacion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ClienteDocumentos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: horaDIGITALIZACION
+Original:
+public DateTime? horaDIGITALIZACION { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? horaDIGITALIZACION { get; set; }
+#else
+    public TimeOnly? horaDIGITALIZACION { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraCreatedWS
+Original:
+public DateTime? HoraCreatedWS { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraCreatedWS { get; set; }
+#else
+    public TimeOnly? HoraCreatedWS { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraExpiresWS
+Original:
+public DateTime? HoraExpiresWS { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraExpiresWS { get; set; }
+#else
+    public TimeOnly? HoraExpiresWS { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ClientesDireccion.cs
+Changes to be made:
+
+Property: HoraAlta
+Original:
+public DateTime? HoraAlta { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraAlta { get; set; }
+#else
+    public TimeOnly? HoraAlta { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFinaliza
+Original:
+public DateTime? HoraFinaliza { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFinaliza { get; set; }
+#else
+    public TimeOnly? HoraFinaliza { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ComplementoDePago.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraTimbrado
+Original:
+public DateTime? HoraTimbrado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraTimbrado { get; set; }
+#else
+    public TimeOnly? HoraTimbrado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraCancelaUUID
+Original:
+public DateTime? HoraCancelaUUID { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraCancelaUUID { get; set; }
+#else
+    public TimeOnly? HoraCancelaUUID { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ConsultaQRSAT.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: Hora2
+Original:
+public DateTime? Hora2 { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora2 { get; set; }
+#else
+    public TimeOnly? Hora2 { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_CteFracFotos.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_CURPSHTokens.cs
+Changes to be made:
+
+Property: HoraEmision
+Original:
+public DateTime? HoraEmision { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEmision { get; set; }
+#else
+    public TimeOnly? HoraEmision { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraVigencia
+Original:
+public DateTime? HoraVigencia { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraVigencia { get; set; }
+#else
+    public TimeOnly? HoraVigencia { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraTerminacion
+Original:
+public DateTime? HoraTerminacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraTerminacion { get; set; }
+#else
+    public TimeOnly? HoraTerminacion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_CXPDoctotal.cs
+Changes to be made:
+
+Property: HoraCancelado
+Original:
+public DateTime? HoraCancelado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraCancelado { get; set; }
+#else
+    public TimeOnly? HoraCancelado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraAutorizaPago
+Original:
+public DateTime? HoraAutorizaPago { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraAutorizaPago { get; set; }
+#else
+    public TimeOnly? HoraAutorizaPago { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Doctotal.cs
+Changes to be made:
+
+Property: HoraCancelaUUID
+Original:
+public DateTime? HoraCancelaUUID { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraCancelaUUID { get; set; }
+#else
+    public TimeOnly? HoraCancelaUUID { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraElaboracion
+Original:
+public DateTime? HoraElaboracion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraElaboracion { get; set; }
+#else
+    public TimeOnly? HoraElaboracion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraSaldaDocumento
+Original:
+public DateTime? HoraSaldaDocumento { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraSaldaDocumento { get; set; }
+#else
+    public TimeOnly? HoraSaldaDocumento { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraPago
+Original:
+public DateTime? HoraPago { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraPago { get; set; }
+#else
+    public TimeOnly? HoraPago { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_DocumentosWServer.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_eDespacho.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HExpedicioneDespacho
+Original:
+public DateTime? HExpedicioneDespacho { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HExpedicioneDespacho { get; set; }
+#else
+    public TimeOnly? HExpedicioneDespacho { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_eDespachoBLS.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_eDespachoDetalle.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_eDespachoDetInspe.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_EmbarqueDatExtra.cs
+Changes to be made:
+
+Property: HoraDeFactura
+Original:
+public DateTime? HoraDeFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeFactura { get; set; }
+#else
+    public TimeOnly? HoraDeFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeModulacion
+Original:
+public DateTime? HoraDeModulacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeModulacion { get; set; }
+#else
+    public TimeOnly? HoraDeModulacion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeEntrega
+Original:
+public DateTime? HoraDeEntrega { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeEntrega { get; set; }
+#else
+    public TimeOnly? HoraDeEntrega { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ERFCDetalle.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ExpedienteDigital.cs
+Changes to be made:
+
+Property: HoraPago
+Original:
+public DateTime? HoraPago { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraPago { get; set; }
+#else
+    public TimeOnly? HoraPago { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_FactElec.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Factura.cs
+Changes to be made:
+
+Property: HoraFE
+Original:
+public DateTime? HoraFE { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFE { get; set; }
+#else
+    public TimeOnly? HoraFE { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraTimbrado
+Original:
+public DateTime? HoraTimbrado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraTimbrado { get; set; }
+#else
+    public TimeOnly? HoraTimbrado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFolioFiscalOrig
+Original:
+public DateTime? HoraFolioFiscalOrig { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFolioFiscalOrig { get; set; }
+#else
+    public TimeOnly? HoraFolioFiscalOrig { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraElaboracion
+Original:
+public DateTime? HoraElaboracion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraElaboracion { get; set; }
+#else
+    public TimeOnly? HoraElaboracion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraPasaACobranza
+Original:
+public DateTime? HoraPasaACobranza { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraPasaACobranza { get; set; }
+#else
+    public TimeOnly? HoraPasaACobranza { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraCancelaUUID
+Original:
+public DateTime? HoraCancelaUUID { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraCancelaUUID { get; set; }
+#else
+    public TimeOnly? HoraCancelaUUID { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnvioCancelar
+Original:
+public DateTime? HoraEnvioCancelar { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnvioCancelar { get; set; }
+#else
+    public TimeOnly? HoraEnvioCancelar { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_GeneradorADP.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraGeneracion
+Original:
+public DateTime? HoraGeneracion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraGeneracion { get; set; }
+#else
+    public TimeOnly? HoraGeneracion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_HistorialVal.cs
+Changes to be made:
+
+Property: HoraPeticion
+Original:
+public DateTime? HoraPeticion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraPeticion { get; set; }
+#else
+    public TimeOnly? HoraPeticion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRespuesta
+Original:
+public DateTime? HoraRespuesta { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRespuesta { get; set; }
+#else
+    public TimeOnly? HoraRespuesta { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ImpresionAutAR.cs
+Changes to be made:
+
+Property: HoraImpresion
+Original:
+public DateTime? HoraImpresion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraImpresion { get; set; }
+#else
+    public TimeOnly? HoraImpresion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnviado
+Original:
+public DateTime? HoraEnviado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnviado { get; set; }
+#else
+    public TimeOnly? HoraEnviado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Inspectores.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_LockGeneral.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_NGafeteUnico.cs
+Changes to be made:
+
+Property: RegistroHora
+Original:
+public DateTime? RegistroHora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? RegistroHora { get; set; }
+#else
+    public TimeOnly? RegistroHora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_NOPedimento.cs
+Changes to be made:
+
+Property: BancoHoraPago
+Original:
+public DateTime? BancoHoraPago { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? BancoHoraPago { get; set; }
+#else
+    public TimeOnly? BancoHoraPago { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_NotaCreCarDigital.cs
+Changes to be made:
+
+Property: HoraFE
+Original:
+public DateTime? HoraFE { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFE { get; set; }
+#else
+    public TimeOnly? HoraFE { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraTimbrado
+Original:
+public DateTime? HoraTimbrado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraTimbrado { get; set; }
+#else
+    public TimeOnly? HoraTimbrado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFolioFiscalOrig
+Original:
+public DateTime? HoraFolioFiscalOrig { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFolioFiscalOrig { get; set; }
+#else
+    public TimeOnly? HoraFolioFiscalOrig { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Notificaciones.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraLeido
+Original:
+public DateTime? HoraLeido { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraLeido { get; set; }
+#else
+    public TimeOnly? HoraLeido { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PartidaDatosExtra.cs
+Changes to be made:
+
+Property: RegistroHora
+Original:
+public DateTime? RegistroHora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? RegistroHora { get; set; }
+#else
+    public TimeOnly? RegistroHora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PatenteDireccion.cs
+Changes to be made:
+
+Property: RegistroHora
+Original:
+public DateTime? RegistroHora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? RegistroHora { get; set; }
+#else
+    public TimeOnly? RegistroHora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PDFAutomaticoPE.cs
+Changes to be made:
+
+Property: HoraGenerado
+Original:
+public DateTime? HoraGenerado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraGenerado { get; set; }
+#else
+    public TimeOnly? HoraGenerado { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEnviado
+Original:
+public DateTime? HoraEnviado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEnviado { get; set; }
+#else
+    public TimeOnly? HoraEnviado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PedimentoDatExtra.cs
+Changes to be made:
+
+Property: RegistroHora
+Original:
+public DateTime? RegistroHora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? RegistroHora { get; set; }
+#else
+    public TimeOnly? RegistroHora { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeFactura
+Original:
+public DateTime? HoraDeFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeFactura { get; set; }
+#else
+    public TimeOnly? HoraDeFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeModulacion
+Original:
+public DateTime? HoraDeModulacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeModulacion { get; set; }
+#else
+    public TimeOnly? HoraDeModulacion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeEntrega
+Original:
+public DateTime? HoraDeEntrega { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeEntrega { get; set; }
+#else
+    public TimeOnly? HoraDeEntrega { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PedimentoImagenes.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Pedimentos.cs
+Changes to be made:
+
+Property: HoraDePagoBanco
+Original:
+public DateTime? HoraDePagoBanco { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDePagoBanco { get; set; }
+#else
+    public TimeOnly? HoraDePagoBanco { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HraGenCon
+Original:
+public DateTime? HraGenCon { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HraGenCon { get; set; }
+#else
+    public TimeOnly? HraGenCon { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraAutor
+Original:
+public DateTime? HoraAutor { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraAutor { get; set; }
+#else
+    public TimeOnly? HoraAutor { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRojo1
+Original:
+public DateTime? HoraRojo1 { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRojo1 { get; set; }
+#else
+    public TimeOnly? HoraRojo1 { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRojo2
+Original:
+public DateTime? HoraRojo2 { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRojo2 { get; set; }
+#else
+    public TimeOnly? HoraRojo2 { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeArriboBuque
+Original:
+public DateTime? HoraDeArriboBuque { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeArriboBuque { get; set; }
+#else
+    public TimeOnly? HoraDeArriboBuque { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraPasaAFacturar
+Original:
+public DateTime? HoraPasaAFacturar { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraPasaAFacturar { get; set; }
+#else
+    public TimeOnly? HoraPasaAFacturar { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PedimentoSOIA.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PermisosCFraccion.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ProcesosAutomatic.cs
+Changes to be made:
+
+Property: Intervalo
+Original:
+public DateTime? Intervalo { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Intervalo { get; set; }
+#else
+    public TimeOnly? Intervalo { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraInicio
+Original:
+public DateTime? HoraInicio { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicio { get; set; }
+#else
+    public TimeOnly? HoraInicio { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFin
+Original:
+public DateTime? HoraFin { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFin { get; set; }
+#else
+    public TimeOnly? HoraFin { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFija
+Original:
+public DateTime? HoraFija { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFija { get; set; }
+#else
+    public TimeOnly? HoraFija { get; set; }
+#endif
+--------------------------------------------------
+
+Property: TimeLastReport
+Original:
+public DateTime? TimeLastReport { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? TimeLastReport { get; set; }
+#else
+    public TimeOnly? TimeLastReport { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_PtyFactElect.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RDocumConCandados.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RDocumentos.cs
+Changes to be made:
+
+Property: HoraEmision
+Original:
+public DateTime? HoraEmision { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEmision { get; set; }
+#else
+    public TimeOnly? HoraEmision { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraEntregado
+Original:
+public DateTime? HoraEntregado { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEntregado { get; set; }
+#else
+    public TimeOnly? HoraEntregado { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RDocumentosCartaP.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RDocumentosDodaQR.cs
+Changes to be made:
+
+Property: HoraEmision
+Original:
+public DateTime? HoraEmision { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraEmision { get; set; }
+#else
+    public TimeOnly? HoraEmision { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RDocumentosPedAme.cs
+Changes to be made:
+
+Property: HoraRegistro
+Original:
+public DateTime? HoraRegistro { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraRegistro { get; set; }
+#else
+    public TimeOnly? HoraRegistro { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RelacionCAATNGU.cs
+Changes to be made:
+
+Property: RegistroHora
+Original:
+public DateTime? RegistroHora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? RegistroHora { get; set; }
+#else
+    public TimeOnly? RegistroHora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_RemAerea.cs
+Changes to be made:
+
+Property: HoraDeModulacion
+Original:
+public DateTime? HoraDeModulacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeModulacion { get; set; }
+#else
+    public TimeOnly? HoraDeModulacion { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Remesas.cs
+Changes to be made:
+
+Property: HoraElab
+Original:
+public DateTime? HoraElab { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraElab { get; set; }
+#else
+    public TimeOnly? HoraElab { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraImpresion
+Original:
+public DateTime? HoraImpresion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraImpresion { get; set; }
+#else
+    public TimeOnly? HoraImpresion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeFactura
+Original:
+public DateTime? HoraDeFactura { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeFactura { get; set; }
+#else
+    public TimeOnly? HoraDeFactura { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeModulacion
+Original:
+public DateTime? HoraDeModulacion { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeModulacion { get; set; }
+#else
+    public TimeOnly? HoraDeModulacion { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraDeEntrega
+Original:
+public DateTime? HoraDeEntrega { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraDeEntrega { get; set; }
+#else
+    public TimeOnly? HoraDeEntrega { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Sagar.cs
+Changes to be made:
+
+Property: HExpedicionSolicitud
+Original:
+public DateTime? HExpedicionSolicitud { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HExpedicionSolicitud { get; set; }
+#else
+    public TimeOnly? HExpedicionSolicitud { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraSIF
+Original:
+public DateTime? HoraSIF { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraSIF { get; set; }
+#else
+    public TimeOnly? HoraSIF { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HExpedicionSIF
+Original:
+public DateTime? HExpedicionSIF { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HExpedicionSIF { get; set; }
+#else
+    public TimeOnly? HExpedicionSIF { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_SagarDetalleNC.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_SagareDocuments.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_TraficoINI.cs
+Changes to be made:
+
+Property: HoraInicial
+Original:
+public DateTime? HoraInicial { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraInicial { get; set; }
+#else
+    public TimeOnly? HoraInicial { get; set; }
+#endif
+--------------------------------------------------
+
+Property: HoraFinal
+Original:
+public DateTime? HoraFinal { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? HoraFinal { get; set; }
+#else
+    public TimeOnly? HoraFinal { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_ValidaCOVE.cs
+Changes to be made:
+
+Property: Hora
+Original:
+public DateTime? Hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? Hora { get; set; }
+#else
+    public TimeOnly? Hora { get; set; }
+#endif
+--------------------------------------------------
+
+File: VT_Veterinario.cs
+Changes to be made:
+
+Property: hora
+Original:
+public DateTime? hora { get; set; }
+Will be changed to:
+#if CompilandoBackendSQLServer
+    public DateTime? hora { get; set; }
+#else
+    public TimeOnly? hora { get; set; }
+#endif
+--------------------------------------------------
