@@ -3,6 +3,7 @@
     <ProjectReference Include="..\SchemaComparison.Core\SchemaComparison.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IronPdf" Version="2024.11.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />

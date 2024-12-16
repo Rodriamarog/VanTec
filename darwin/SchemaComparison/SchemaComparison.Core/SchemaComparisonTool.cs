@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -37,19 +37,15 @@ namespace SchemaComparison.Core
 
         private int GetTotalVTTables()
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"
-                    SELECT COUNT(*) 
-                    FROM sys.tables 
-                    WHERE name LIKE 'VT[_]%'";
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+            var query = @"
+                SELECT COUNT(*) 
+                FROM sys.tables 
+                WHERE name LIKE 'VT[_]%'";
 
-                using (var command = new SqlCommand(query, connection))
-                {
-                    return (int)command.ExecuteScalar();
-                }
-            }
+            using var command = new SqlCommand(query, connection);
+            return (int)command.ExecuteScalar();
         }
 
         public ComparisonResult CompareSchemas()
@@ -103,35 +99,33 @@ namespace SchemaComparison.Core
         {
             var schema = new Dictionary<string, Dictionary<string, string>>();
             
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
                 
-                var query = @"
-                    SELECT 
-                        REPLACE(t.name, 'VT_', '') AS TableName,
-                        c.name AS ColumnName
-                    FROM sys.tables t
-                    INNER JOIN sys.columns c ON t.object_id = c.object_id
-                    WHERE t.name LIKE 'VT[_]%'
-                    ORDER BY t.name, c.column_id";
+            var query = @"
+                SELECT 
+                    REPLACE(t.name, 'VT_', '') AS TableName,
+                    c.name AS ColumnName
+                FROM sys.tables t
+                INNER JOIN sys.columns c ON t.object_id = c.object_id
+                WHERE t.name LIKE 'VT[_]%'
+                ORDER BY t.name, c.column_id";
 
-                using (var command = new SqlCommand(query, connection))
-                using (var reader = command.ExecuteReader())
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                var tableName = reader["TableName"].ToString() ?? string.Empty;
+                var columnName = reader["ColumnName"].ToString() ?? string.Empty;
+
+                if (!schema.TryGetValue(tableName, out var columns))
                 {
-                    while (reader.Read())
-                    {
-                        var tableName = reader["TableName"].ToString();
-                        var columnName = reader["ColumnName"].ToString();
-
-                        if (!schema.ContainsKey(tableName))
-                        {
-                            schema[tableName] = new Dictionary<string, string>();
-                        }
-
-                        schema[tableName][columnName] = "";
-                    }
+                    columns = new Dictionary<string, string>();
+                    schema[tableName] = columns;
                 }
+
+                columns[columnName] = string.Empty;
             }
 
             return schema;
@@ -158,11 +152,11 @@ namespace SchemaComparison.Core
 
         private class EntityClass
         {
-            public string Name { get; set; }
+            public required string Name { get; set; }
             public Dictionary<string, string> Properties { get; set; } = new();
         }
 
-        private EntityClass ParseEntityClass(string content)
+        private EntityClass? ParseEntityClass(string content)
         {
             var classNameMatch = Regex.Match(content, @"public\s+(?:partial\s+)?class\s+(\w+)");
             if (!classNameMatch.Success) return null;
@@ -182,7 +176,7 @@ namespace SchemaComparison.Core
                 
                 if (!propertyType.StartsWith("VT_") && !propertyType.Contains("ICollection"))
                 {
-                    entity.Properties[propertyName] = "";
+                    entity.Properties[propertyName] = string.Empty;
                 }
             }
 
@@ -192,34 +186,35 @@ namespace SchemaComparison.Core
         private IEnumerable<string> GetAllTableNames(ComparisonResult result)
         {
             var allTables = new HashSet<string>();
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"
-                    SELECT REPLACE(name, 'VT_', '') AS TableName
-                    FROM sys.tables
-                    WHERE name LIKE 'VT[_]%'
-                    ORDER BY name";
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+            
+            var query = @"
+                SELECT REPLACE(name, 'VT_', '') AS TableName
+                FROM sys.tables
+                WHERE name LIKE 'VT[_]%'
+                ORDER BY name";
 
-                using (var command = new SqlCommand(query, connection))
-                using (var reader = command.ExecuteReader())
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                var tableName = reader["TableName"].ToString();
+                if (!string.IsNullOrEmpty(tableName))
                 {
-                    while (reader.Read())
-                    {
-                        allTables.Add(reader["TableName"].ToString());
-                    }
+                    allTables.Add(tableName);
                 }
             }
+            
             return allTables;
         }
 
         private bool IsTablePerfectMatch(string tableName, ComparisonResult result)
         {
-            if (result.TablesOnlyInDatabase.Contains(tableName)) return false;
-            if (result.TablesOnlyInFiles.Contains(tableName)) return false;
-            if (result.TableDifferences.ContainsKey(tableName)) return false;
-            
-            return true;
+            return !result.TablesOnlyInDatabase.Contains(tableName) &&
+                   !result.TablesOnlyInFiles.Contains(tableName) &&
+                   !result.TableDifferences.ContainsKey(tableName);
         }
 
         public string GenerateReport(ComparisonResult result)

@@ -68,9 +68,7 @@ Diagnóstico:
 
 ✅ VT_AvisoRemeDatExtra - Tabla congruente
 
-❌ VT_AvisoRemesas - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - ArchivoDigital
+✅ VT_AvisoRemesas - Tabla congruente
 
 ✅ VT_AvisoRemesasGuias - Tabla congruente
 
@@ -82,9 +80,7 @@ Diagnóstico:
 
 ✅ VT_AvisosFP - Tabla congruente
 
-❌ VT_AvisosTraslado - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - AnioAT
+✅ VT_AvisosTraslado - Tabla congruente
 
 ✅ VT_AvisoValidacion - Tabla congruente
 
@@ -96,10 +92,7 @@ Diagnóstico:
 
 ✅ VT_BalanceDeHort - Tabla congruente
 
-❌ VT_Bancos - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - ClaveTransferencia
-     - habilitarBanEnModulo
+✅ VT_Bancos - Tabla congruente
 
 ✅ VT_BaseHonorarios - Tabla congruente
 
@@ -187,9 +180,7 @@ Diagnóstico:
 
 ✅ VT_BEmbarques - Tabla congruente
 
-❌ VT_BEntrada - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - Bloqueado
+✅ VT_BEntrada - Tabla congruente
 
 ✅ VT_BEntradaContenedo - Tabla congruente
 
@@ -205,9 +196,7 @@ Diagnóstico:
 
 ✅ VT_BFacturaGastos - Tabla congruente
 
-❌ VT_BFacturas - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - subdividirPorValor
+✅ VT_BFacturas - Tabla congruente
 
 ✅ VT_BFacturasFabrican - Tabla congruente
 
@@ -459,11 +448,7 @@ Diagnóstico:
 
 ✅ VT_ClientePersonasMV - Tabla congruente
 
-❌ VT_Clientes - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - DefaultKeyCer
-     - ObservacionesExp
-     - ReferenciaPedimento
+✅ VT_Clientes - Tabla congruente
 
 ✅ VT_ClientesAFacturar - Tabla congruente
 
@@ -485,9 +470,7 @@ Diagnóstico:
 
 ✅ VT_ComplementoDePago - Tabla congruente
 
-❌ VT_Concepto - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - HeredarCobroCptoPed
+✅ VT_Concepto - Tabla congruente
 
 ✅ VT_ConceptoPorClient - Tabla congruente
 
@@ -505,11 +488,7 @@ Diagnóstico:
 
 ✅ VT_ConfiguracionCte - Tabla congruente
 
-❌ VT_ConfiguracionGral - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - AfecSaldoPagarFacCXP
-     - ProductoGeneral
-     - AutoriPagoFacturaCXP
+✅ VT_ConfiguracionGral - Tabla congruente
 
 ❌ VT_ConfProveXEmpresa - Incongruencias encontradas:
    • Tabla existe en BD pero no en archivo
@@ -543,14 +522,7 @@ Diagnóstico:
 
 ✅ VT_CptoADescontarGlo - Tabla congruente
 
-❌ VT_CtaContables - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - FechaSaldoInicial
-     - SaldoInicial
-     - HeredarInfoProforma
-     - AfecSaldoPagarFacCXP
-     - Serie
-     - SaldoInicialFondo
+✅ VT_CtaContables - Tabla congruente
 
 ✅ VT_CtaContaNiveDepto - Tabla congruente
 
@@ -558,11 +530,7 @@ Diagnóstico:
 
 ✅ VT_CtaContXSerieYCte - Tabla congruente
 
-❌ VT_CteDefaultCons - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - TransporteArriboGen
-     - TransporteSalidaGen
-     - TransporteTerritGen
+✅ VT_CteDefaultCons - Tabla congruente
 
 ✅ VT_CteDefConsDetaPA - Tabla congruente
 
@@ -598,13 +566,7 @@ Diagnóstico:
 
 ✅ VT_CXPDoctos - Tabla congruente
 
-❌ VT_CXPDoctotal - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - CuentasBancoProve
-     - AutorizaPago
-     - FechaAutorizaPago
-     - HoraAutorizaPago
-     - UsuarioAutorizaPago
+✅ VT_CXPDoctotal - Tabla congruente
 
 ✅ VT_CXPFoliosDePagos - Tabla congruente
 
@@ -618,11 +580,7 @@ Diagnóstico:
 
 ✅ VT_CXPTipDocXProvee - Tabla congruente
 
-❌ VT_CXPTipoDocumento - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - Fondo
-     - TipoCuenta
-     - Sucursal
+✅ VT_CXPTipoDocumento - Tabla congruente
 
 ✅ VT_CXPTiposDeCambio - Tabla congruente
 
@@ -678,9 +636,7 @@ Diagnóstico:
 
 ✅ VT_DireccionDeCorreo - Tabla congruente
 
-❌ VT_DirecCorreInterno - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - EnviarInfoPago
+✅ VT_DirecCorreInterno - Tabla congruente
 
 ✅ VT_DireDeCorreoProve - Tabla congruente
 
@@ -815,9 +771,7 @@ Diagnóstico:
 
 ✅ VT_GeneradorADP - Tabla congruente
 
-❌ VT_General - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - ArchDigitalFacEnAuto
+✅ VT_General - Tabla congruente
 
 ✅ VT_GrupoConcepto - Tabla congruente
 
@@ -891,11 +845,7 @@ Diagnóstico:
 
 ✅ VT_MetodoPagoNotaCre - Tabla congruente
 
-❌ VT_Modulos - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - QRAutorizarPaValidar
-     - CartaProtestaAlADP
-     - RestringirRemSemDif
+✅ VT_Modulos - Tabla congruente
 
 ✅ VT_MovtoFin - Tabla congruente
 
@@ -975,10 +925,7 @@ Diagnóstico:
 
 ✅ VT_PartidaContrib - Tabla congruente
 
-❌ VT_PartidaDatosExtra - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - TipoEmisorCO
-     - NumeroDeRollo
+✅ VT_PartidaDatosExtra - Tabla congruente
 
 ✅ VT_PartidaGarantias - Tabla congruente
 
@@ -1032,9 +979,7 @@ Diagnóstico:
 
 ✅ VT_PedimentoCuenta - Tabla congruente
 
-❌ VT_PedimentoDatExtra - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - EmpresaLucyPE
+✅ VT_PedimentoDatExtra - Tabla congruente
 
 ✅ VT_PedimentoDescargo - Tabla congruente
 
@@ -1042,9 +987,7 @@ Diagnóstico:
 
 ✅ VT_PedimentoDIE - Tabla congruente
 
-❌ VT_PedimentoFacturas - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - TipoEmisorCO
+✅ VT_PedimentoFacturas - Tabla congruente
 
 ✅ VT_PedimentoGarantia - Tabla congruente
 
@@ -1192,9 +1135,7 @@ Diagnóstico:
 
 ✅ VT_RelUsuarioCtes - Tabla congruente
 
-❌ VT_RemAerea - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - ArchivoDigital
+✅ VT_RemAerea - Tabla congruente
 
 ✅ VT_RemAereaCandados - Tabla congruente
 
@@ -1216,9 +1157,7 @@ Diagnóstico:
 
 ✅ VT_RemesasGuias - Tabla congruente
 
-❌ VT_Represen - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - Mancomunado
+✅ VT_Represen - Tabla congruente
 
 ✅ VT_RFCConsulta - Tabla congruente
 
@@ -1300,9 +1239,7 @@ Diagnóstico:
    • Tabla existe en BD pero no en archivo
 ✅ VT_TipoDeCliente - Tabla congruente
 
-❌ VT_TipoDeDocumento - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - Fondo
+✅ VT_TipoDeDocumento - Tabla congruente
 
 ✅ VT_TipoDocumentoCTE - Tabla congruente
 
@@ -1316,9 +1253,7 @@ Diagnóstico:
 
 ✅ VT_TraficoINI - Tabla congruente
 
-❌ VT_TransporTransitos - Incongruencias encontradas:
-   • Columnas solo en BD:
-     - EsExtranjero
+✅ VT_TransporTransitos - Tabla congruente
 
 ✅ VT_UnidadMedidaFact - Tabla congruente
 
@@ -1375,5 +1310,5 @@ Diagnóstico:
 
 Resumen:
 Total de tablas revisadas: 648
-Tablas congruentes: 608
-Tablas con diferencias: 40
+Tablas congruentes: 630
+Tablas con diferencias: 18
