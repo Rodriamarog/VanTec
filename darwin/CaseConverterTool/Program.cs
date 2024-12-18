@@ -75,11 +75,11 @@ public class CaseConverter
         }
     }
 
-    private void BuildFileMappings()
+         private void BuildFileMappings()
     {
         var sqlServerFiles = Directory.GetFiles(_sqlServerPath, "VT_*.cs", SearchOption.AllDirectories);
-        var mariaDbFiles = Directory.GetFiles(_mariaDbPath, "vt_*.cs", SearchOption.AllDirectories)
-            .Where(f => !IsAlreadyCamelCase(f)); // Skip files already in CamelCase
+        var mariaDbFiles = Directory.GetFiles(_mariaDbPath, "vt_*.cs", SearchOption.AllDirectories);
+        // Removed the .Where(f => !IsAlreadyCamelCase(f)) filter
 
         foreach (var sqlFile in sqlServerFiles)
         {
@@ -94,7 +94,7 @@ public class CaseConverter
             }
         }
 
-        Console.WriteLine($"\nFound {_fileMapping.Count} files to convert");
+        Console.WriteLine($"\nFound {_fileMapping.Count} files to process");
     }
 
     private bool IsAlreadyCamelCase(string filePath)
