@@ -1,0 +1,139 @@
+@page "/case-converter"
+@using CaseConverterBlazor.Services
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Case Converter</PageTitle>
+
+<div class="container mt-4">
+    <h1>Convertidor a CamelCase</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <EditForm Model="@model" OnValidSubmit="ProcessFiles">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="mb-3">
+                            <label class="form-label">MariaDB Path:</label>
+                            <InputText @bind-Value="model.MariaDbPath" class="form-control" />
+                            <div class="form-text">Path to MariaDB files (e.g., C:\path\to\MariaDB\Diccionario)</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">SQL Server Path:</label>
+                            <InputText @bind-Value="model.SqlServerPath" class="form-control" />
+                            <div class="form-text">Path to SQL Server files (e.g., C:\path\to\SQLServer\Diccionario)</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" disabled="@isProcessing">
+                            @if (isProcessing)
+                            {
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <span class="ms-1">Processing...</span>
+                            }
+                            else
+                            {
+                                <span>Iniciar Conversion</span>
+                            }
+                        </button>
+                    </EditForm>
+                </div>
+            </div>
+
+            @if (dryRunResults.Any())
+            {
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Dry Run Results</h5>
+                        <div class="alert alert-info">
+                            Found @dryRunResults.Count files to process. Review the changes below:
+                        </div>
+                        <div class="dry-run-results">
+                            @foreach (var result in dryRunResults)
+                            {
+                                <pre class="bg-light p-2 mt-2">@result</pre>
+                            }
+                        </div>
+                        <button class="btn btn-success mt-3" @onclick="PerformActualChanges" disabled="@isProcessing">
+                            Proceed with Changes
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private PathModel model = new();
+    private bool isProcessing;
+    private List<string> dryRunResults = new();
+
+    private class PathModel
+    {
+        [Required(ErrorMessage = "MariaDB path is required")]
+        public string MariaDbPath { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "SQL Server path is required")]
+        public string SqlServerPath { get; set; } = string.Empty;
+    }
+
+    private async Task ProcessFiles()
+    {
+        try
+        {
+            isProcessing = true;
+            dryRunResults.Clear();
+
+            var converter = new Services.CaseConverter(model.MariaDbPath, model.SqlServerPath);
+            converter.ProcessFiles(true);
+
+            // Get dry run results from the backup folder
+            var backupDir = Path.GetDirectoryName(model.MariaDbPath);
+            if (backupDir != null)
+            {
+                var resultsFile = Directory.GetFiles(Path.Combine(backupDir, "Backups"), 
+                    "dry_run_results.txt", 
+                    SearchOption.AllDirectories)
+                    .OrderByDescending(f => File.GetLastWriteTime(f))
+                    .FirstOrDefault();
+
+                if (resultsFile != null)
+                {
+                    dryRunResults = File.ReadAllLines(resultsFile).ToList();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error: {ex.Message}");
+        }
+        finally
+        {
+            isProcessing = false;
+        }
+    }
+
+    private async Task PerformActualChanges()
+    {
+        try
+        {
+            isProcessing = true;
+            var converter = new Services.CaseConverter(model.MariaDbPath, model.SqlServerPath);
+            converter.ProcessFiles(false);
+            await JSRuntime.InvokeVoidAsync("alert", "Conversion completed successfully!");
+            dryRunResults.Clear();
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error: {ex.Message}");
+        }
+        finally
+        {
+            isProcessing = false;
+        }
+    }
+}
