@@ -8,14 +8,34 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Modify these paths to match your directory structure
-        var mariaDbPath = @"C:\netC#\apps\Datos_MariaDB\Datos_MariaDB\Datos\Datos\Diccionario";
-        var sqlServerPath = @"C:\netC#\apps\Datos_SQLServer\Datos_SQLServer\Datos\Diccionario";
+        string? sqlServerPath = null;
+        string? mariaDbPath = null;
+
+        Console.WriteLine("Please enter the path to the SQL Server Diccionario folder:");
+        sqlServerPath = Console.ReadLine()?.Trim('"');  // Trim quotes in case of copy-paste
+        
+        if (string.IsNullOrEmpty(sqlServerPath) || !Directory.Exists(sqlServerPath))
+        {
+            Console.WriteLine("Invalid SQL Server folder path. Exiting...");
+            return;
+        }
+
+        Console.WriteLine("\nPlease enter the path to the MariaDB Diccionario folder:");
+        mariaDbPath = Console.ReadLine()?.Trim('"');
+        
+        if (string.IsNullOrEmpty(mariaDbPath) || !Directory.Exists(mariaDbPath))
+        {
+            Console.WriteLine("Invalid MariaDB folder path. Exiting...");
+            return;
+        }
+
+        Console.WriteLine($"\nSelected SQL Server path: {sqlServerPath}");
+        Console.WriteLine($"Selected MariaDB path: {mariaDbPath}");
         
         var converter = new CaseConverter(mariaDbPath, sqlServerPath);
         
         // First do a dry run
-        Console.WriteLine("=== PERFORMING DRY RUN ===");
+        Console.WriteLine("\n=== PERFORMING DRY RUN ===");
         converter.ProcessFiles(isDryRun: true);
 
         Console.WriteLine("\nWould you like to proceed with the actual changes? (y/n)");
