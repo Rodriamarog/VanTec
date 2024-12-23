@@ -2,11 +2,11 @@
 @rendermode InteractiveServer
 @using System.IO
 
-<h3>Database Directory Converter</h3>
+<h3>Convertidor a Mayusculas</h3>
 
 <div class="container mt-4">
     <div class="mb-4">
-        <label class="form-label">SQL Server Directory Path:</label>
+        <label class="form-label">Path a directorio de SQL Server:</label>
         <input @bind="sqlServerPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" placeholder="Enter SQL Server directory path" />
         @if (!string.IsNullOrEmpty(sqlServerPathMessage))
         {
@@ -17,7 +17,7 @@
     </div>
 
     <div class="mb-4">
-        <label class="form-label">MariaDB Directory Path:</label>
+        <label class="form-label">Path a directorio de MariaDB:</label>
         <input @bind="mariaDbPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" placeholder="Enter MariaDB directory path" />
         @if (!string.IsNullOrEmpty(mariaDbPathMessage))
         {
@@ -27,7 +27,7 @@
         }
     </div>
 
-    <button class="btn btn-primary" @onclick="ValidateAndStartDryRun">Start Dry Run</button>
+    <button class="btn btn-primary" @onclick="ValidateAndStartDryRun">Empezar Dry Run</button>
 
     @if (!string.IsNullOrEmpty(conversionMessage))
     {
@@ -39,7 +39,7 @@
     @if (showConfirmation)
     {
         <div class="mt-4">
-            <p>Dry run completed. Would you like to proceed with the actual changes?</p>
+            <p>Dry run completado. Quieres continuar con los cambios reales?</p>
             <button class="btn btn-success me-2" @onclick="StartActualConversion">Yes, Proceed</button>
             <button class="btn btn-secondary" @onclick="ResetConverter">No, Cancel</button>
         </div>
