@@ -1,10 +1,25 @@
 using CaseConverterBlazor.Components;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Add authentication services
+builder.Services.AddAuthentication("Cookies")
+    .AddCookie("Cookies", options =>
+    {
+        options.LoginPath = "/login";
+        options.LogoutPath = "/logout";
+    });
+
+// Configure Kestrel to listen on specific ports
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(5053); // HTTP port
+    options.ListenLocalhost(5001, listenOptions => listenOptions.UseHttps()); // HTTPS port
+});
 
 var app = builder.Build();
 
@@ -19,6 +34,12 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
