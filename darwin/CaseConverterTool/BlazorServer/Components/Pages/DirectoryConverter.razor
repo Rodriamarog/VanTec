@@ -1,0 +1,147 @@
+@page "/directory-converter"
+@rendermode InteractiveServer
+@using System.IO
+
+<h3>Database Directory Converter</h3>
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <label class="form-label">SQL Server Directory Path:</label>
+        <input @bind="sqlServerPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" placeholder="Enter SQL Server directory path" />
+        @if (!string.IsNullOrEmpty(sqlServerPathMessage))
+        {
+            <div class="@(sqlServerPathValid ? "text-success" : "text-danger") mt-1">
+                @sqlServerPathMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">MariaDB Directory Path:</label>
+        <input @bind="mariaDbPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" placeholder="Enter MariaDB directory path" />
+        @if (!string.IsNullOrEmpty(mariaDbPathMessage))
+        {
+            <div class="@(mariaDbPathValid ? "text-success" : "text-danger") mt-1">
+                @mariaDbPathMessage
+            </div>
+        }
+    </div>
+
+    <button class="btn btn-primary" @onclick="ValidateAndStartDryRun">Start Dry Run</button>
+
+    @if (!string.IsNullOrEmpty(conversionMessage))
+    {
+        <div class="mt-4 p-3 @(isError ? "bg-danger" : "bg-info") text-white rounded">
+            @conversionMessage
+        </div>
+    }
+
+    @if (showConfirmation)
+    {
+        <div class="mt-4">
+            <p>Dry run completed. Would you like to proceed with the actual changes?</p>
+            <button class="btn btn-success me-2" @onclick="StartActualConversion">Yes, Proceed</button>
+            <button class="btn btn-secondary" @onclick="ResetConverter">No, Cancel</button>
+        </div>
+    }
+</div>
+
+@code {
+    private string sqlServerPath = "";
+    private string mariaDbPath = "";
+    private string sqlServerPathMessage = "";
+    private string mariaDbPathMessage = "";
+    private string conversionMessage = "";
+    private bool sqlServerPathValid;
+    private bool mariaDbPathValid;
+    private bool showConfirmation;
+    private bool isError;
+    private CaseConverter? converter;
+
+    private void CheckPaths()
+    {
+        // Validate SQL Server path
+        if (string.IsNullOrWhiteSpace(sqlServerPath))
+        {
+            sqlServerPathMessage = "Please enter a path";
+            sqlServerPathValid = false;
+        }
+        else if (!Directory.Exists(sqlServerPath))
+        {
+            sqlServerPathMessage = "Directory does not exist";
+            sqlServerPathValid = false;
+        }
+        else
+        {
+            sqlServerPathMessage = "Directory exists";
+            sqlServerPathValid = true;
+        }
+
+        // Validate MariaDB path
+        if (string.IsNullOrWhiteSpace(mariaDbPath))
+        {
+            mariaDbPathMessage = "Please enter a path";
+            mariaDbPathValid = false;
+        }
+        else if (!Directory.Exists(mariaDbPath))
+        {
+            mariaDbPathMessage = "Directory does not exist";
+            mariaDbPathValid = false;
+        }
+        else
+        {
+            mariaDbPathMessage = "Directory exists";
+            mariaDbPathValid = true;
+        }
+    }
+
+    private void ValidateAndStartDryRun()
+    {
+        CheckPaths();
+        if (!sqlServerPathValid || !mariaDbPathValid) return;
+
+        try
+        {
+            converter = new CaseConverter(mariaDbPath, sqlServerPath);
+            converter.ProcessFiles(isDryRun: true);
+            conversionMessage = "Dry run completed successfully. Check the backup folder for detailed results.";
+            isError = false;
+            showConfirmation = true;
+        }
+        catch (Exception ex)
+        {
+            conversionMessage = $"Error during dry run: {ex.Message}";
+            isError = true;
+            showConfirmation = false;
+        }
+    }
+
+    private void StartActualConversion()
+    {
+        try
+        {
+            converter?.ProcessFiles(isDryRun: false);
+            conversionMessage = "Conversion completed successfully!";
+            isError = false;
+            showConfirmation = false;
+        }
+        catch (Exception ex)
+        {
+            conversionMessage = $"Error during conversion: {ex.Message}";
+            isError = true;
+        }
+    }
+
+    private void ResetConverter()
+    {
+        sqlServerPath = "";
+        mariaDbPath = "";
+        sqlServerPathMessage = "";
+        mariaDbPathMessage = "";
+        conversionMessage = "";
+        showConfirmation = false;
+        sqlServerPathValid = false;
+        mariaDbPathValid = false;
+        converter = null;
+    }
+}
