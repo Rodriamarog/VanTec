@@ -1,0 +1,34 @@
+@page "/directory-check"
+@rendermode InteractiveServer
+
+<h3>Directory Check</h3>
+
+<input @bind="directoryPath" @bind:event="oninput" class="form-control" placeholder="Enter directory path" />
+<button class="btn btn-primary mt-3" @onclick="CheckDirectory">Check Directory</button>
+
+<div class="mt-3">
+    @if (!string.IsNullOrEmpty(resultMessage))
+    {
+        <p style="color: @(directoryExists ? "green" : "red")">@resultMessage</p>
+    }
+</div>
+
+@code {
+    private string directoryPath = "";
+    private string resultMessage = "";
+    private bool directoryExists;
+
+    private void CheckDirectory()
+    {
+        if (string.IsNullOrWhiteSpace(directoryPath))
+        {
+            resultMessage = "Please enter a directory path";
+            return;
+        }
+
+        directoryExists = Directory.Exists(directoryPath);
+        resultMessage = directoryExists 
+            ? $"Directory exists: {directoryPath}" 
+            : $"Directory does not exist: {directoryPath}";
+    }
+}
