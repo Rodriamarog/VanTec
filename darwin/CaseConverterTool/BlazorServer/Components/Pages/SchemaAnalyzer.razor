@@ -1,0 +1,128 @@
+@page "/schema-analyzer"
+@rendermode InteractiveServer
+@using SchemaComparison.Core
+@using System.IO
+
+<h3>Analizador Detallado de Esquema</h3>
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <label class="form-label">Cadena de Conexión SQL Server:</label>
+        <input @bind="connectionString" @bind:event="oninput" @onchange="ValidateInputs" class="form-control" 
+               placeholder="Server=myserver;Database=mydb;Trusted_Connection=True;TrustServerCertificate=True;" />
+        @if (!string.IsNullOrEmpty(connectionStringMessage))
+        {
+            <div class="@(connectionStringValid ? "text-success" : "text-danger") mt-1">
+                @connectionStringMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">Ruta a archivos de Entity Framework:</label>
+        <input @bind="entityFilesPath" @bind:event="oninput" @onchange="ValidateInputs" class="form-control" 
+               placeholder="C:\Path\To\Entity\Files" />
+        @if (!string.IsNullOrEmpty(entityPathMessage))
+        {
+            <div class="@(entityPathValid ? "text-success" : "text-danger") mt-1">
+                @entityPathMessage
+            </div>
+        }
+    </div>
+
+    <button class="btn btn-primary" @onclick="GenerateReport" disabled="@(!canGenerate)">
+        Generar Reporte
+    </button>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger mt-4">
+            @errorMessage
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(report))
+    {
+        <div class="mt-4">
+            <h4>Reporte:</h4>
+            <pre class="bg-light p-3 rounded">@report</pre>
+        </div>
+    }
+</div>
+
+@code {
+    private string connectionString = "";
+    private string entityFilesPath = "";
+    private string connectionStringMessage = "";
+    private string entityPathMessage = "";
+    private bool connectionStringValid;
+    private bool entityPathValid;
+    private bool canGenerate => connectionStringValid && entityPathValid;
+    private string errorMessage = "";
+    private string report = "";
+
+    private void ValidateInputs()
+    {
+        ValidateConnectionString();
+        ValidateEntityPath();
+    }
+
+    private void ValidateConnectionString()
+    {
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            connectionStringMessage = "Por favor ingrese una cadena de conexión";
+            connectionStringValid = false;
+            return;
+        }
+
+        try
+        {
+            var builder = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString);
+            connectionStringMessage = "Cadena de conexión válida";
+            connectionStringValid = true;
+        }
+        catch
+        {
+            connectionStringMessage = "Cadena de conexión inválida";
+            connectionStringValid = false;
+        }
+    }
+
+    private void ValidateEntityPath()
+    {
+        if (string.IsNullOrWhiteSpace(entityFilesPath))
+        {
+            entityPathMessage = "Por favor ingrese una ruta";
+            entityPathValid = false;
+        }
+        else if (!Directory.Exists(entityFilesPath))
+        {
+            entityPathMessage = "El directorio no existe";
+            entityPathValid = false;
+        }
+        else
+        {
+            entityPathMessage = "Directorio válido";
+            entityPathValid = true;
+        }
+    }
+
+    private async Task GenerateReport()
+    {
+        try
+        {
+            errorMessage = "";
+            report = "Generando reporte...";
+            StateHasChanged();
+
+            var analyzer = new DetailedSchemaAnalyzer(entityFilesPath, connectionString);
+            report = await analyzer.GenerateDetailedReportAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al generar el reporte: {ex.Message}";
+            report = "";
+        }
+    }
+} 
