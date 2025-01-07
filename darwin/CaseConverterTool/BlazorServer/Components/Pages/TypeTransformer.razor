@@ -1,0 +1,170 @@
+@page "/type-transformer"
+@rendermode InteractiveServer
+@using System.IO
+
+<h3>Transformador de Tipos DateTime/TimeOnly</h3>
+
+<div class="container mt-4">
+    <div class="mb-4">
+        <label class="form-label">Path a directorio de SQL Server:</label>
+        <input @bind="sqlServerPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" 
+               placeholder="Enter SQL Server directory path" />
+        @if (!string.IsNullOrEmpty(sqlServerPathMessage))
+        {
+            <div class="@(sqlServerPathValid ? "text-success" : "text-danger") mt-1">
+                @sqlServerPathMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">Path a directorio de MariaDB:</label>
+        <input @bind="mariaDbPath" @bind:event="oninput" @onchange="CheckPaths" class="form-control" 
+               placeholder="Enter MariaDB directory path" />
+        @if (!string.IsNullOrEmpty(mariaDbPathMessage))
+        {
+            <div class="@(mariaDbPathValid ? "text-success" : "text-danger") mt-1">
+                @mariaDbPathMessage
+            </div>
+        }
+    </div>
+
+    <button class="btn btn-primary" @onclick="StartDryRun" disabled="@(!canProceed)">
+        Iniciar Dry Run
+    </button>
+
+    @if (!string.IsNullOrEmpty(processMessage))
+    {
+        <div class="mt-4 p-3 @(isError ? "bg-danger" : "bg-info") text-white rounded">
+            @processMessage
+        </div>
+    }
+
+    @if (showResults && !string.IsNullOrEmpty(dryRunResults))
+    {
+        <div class="mt-4">
+            <h4>Resultados del Dry Run:</h4>
+            <pre class="bg-light p-3 rounded">@dryRunResults</pre>
+        </div>
+    }
+
+    @if (showConfirmation)
+    {
+        <div class="mt-4">
+            <p>Dry run completado. ¿Desea proceder con los cambios reales?</p>
+            <button class="btn btn-success me-2" @onclick="StartActualTransformation">Sí, Proceder</button>
+            <button class="btn btn-secondary" @onclick="Reset">No, Cancelar</button>
+        </div>
+    }
+</div>
+
+@code {
+    private string sqlServerPath = "";
+    private string mariaDbPath = "";
+    private string sqlServerPathMessage = "";
+    private string mariaDbPathMessage = "";
+    private string processMessage = "";
+    private string dryRunResults = "";
+    private bool sqlServerPathValid;
+    private bool mariaDbPathValid;
+    private bool canProceed => sqlServerPathValid && mariaDbPathValid;
+    private bool showConfirmation;
+    private bool showResults;
+    private bool isError;
+    private EntityTypeTransformer? transformer;
+
+    private void CheckPaths()
+    {
+        // Validate SQL Server path
+        if (string.IsNullOrWhiteSpace(sqlServerPath))
+        {
+            sqlServerPathMessage = "Por favor ingrese una ruta";
+            sqlServerPathValid = false;
+        }
+        else if (!Directory.Exists(sqlServerPath))
+        {
+            sqlServerPathMessage = "El directorio no existe";
+            sqlServerPathValid = false;
+        }
+        else
+        {
+            sqlServerPathMessage = "Directorio válido";
+            sqlServerPathValid = true;
+        }
+
+        // Validate MariaDB path
+        if (string.IsNullOrWhiteSpace(mariaDbPath))
+        {
+            mariaDbPathMessage = "Por favor ingrese una ruta";
+            mariaDbPathValid = false;
+        }
+        else if (!Directory.Exists(mariaDbPath))
+        {
+            mariaDbPathMessage = "El directorio no existe";
+            mariaDbPathValid = false;
+        }
+        else
+        {
+            mariaDbPathMessage = "Directorio válido";
+            mariaDbPathValid = true;
+        }
+    }
+
+    private void StartDryRun()
+    {
+        try
+        {
+            transformer = new EntityTypeTransformer(mariaDbPath, sqlServerPath);
+            transformer.ProcessFiles(isDryRun: true);
+            
+            var resultsPath = Path.Combine(Directory.GetCurrentDirectory(), "dry_run_results.txt");
+            if (File.Exists(resultsPath))
+            {
+                dryRunResults = File.ReadAllText(resultsPath);
+                showResults = true;
+            }
+            
+            processMessage = "Dry run completado exitosamente.";
+            isError = false;
+            showConfirmation = true;
+        }
+        catch (Exception ex)
+        {
+            processMessage = $"Error durante el dry run: {ex.Message}";
+            isError = true;
+            showConfirmation = false;
+            showResults = false;
+        }
+    }
+
+    private void StartActualTransformation()
+    {
+        try
+        {
+            transformer?.ProcessFiles(isDryRun: false);
+            processMessage = "¡Transformación completada exitosamente!";
+            isError = false;
+            showConfirmation = false;
+        }
+        catch (Exception ex)
+        {
+            processMessage = $"Error durante la transformación: {ex.Message}";
+            isError = true;
+        }
+    }
+
+    private void Reset()
+    {
+        sqlServerPath = "";
+        mariaDbPath = "";
+        sqlServerPathMessage = "";
+        mariaDbPathMessage = "";
+        processMessage = "";
+        dryRunResults = "";
+        showConfirmation = false;
+        showResults = false;
+        sqlServerPathValid = false;
+        mariaDbPathValid = false;
+        transformer = null;
+    }
+}
