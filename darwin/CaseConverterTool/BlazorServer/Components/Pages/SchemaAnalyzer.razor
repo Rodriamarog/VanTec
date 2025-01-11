@@ -10,6 +10,9 @@
         <label class="form-label">Cadena de Conexión SQL Server:</label>
         <input @bind="connectionString" @bind:event="oninput" @onchange="ValidateInputs" class="form-control" 
                placeholder="Server=myserver;Database=mydb;Trusted_Connection=True;TrustServerCertificate=True;" />
+        <small class="text-muted d-block mt-1">
+            Usualmente el correcto es: Server=localhost;Database=darwin;Trusted_Connection=True;TrustServerCertificate=True
+        </small>
         @if (!string.IsNullOrEmpty(connectionStringMessage))
         {
             <div class="@(connectionStringValid ? "text-success" : "text-danger") mt-1">
